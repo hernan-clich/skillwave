@@ -6,7 +6,7 @@ function Footer() {
             <div className="footer-logo">
                 <img src="logo-bg.png" alt="logo" />    
             </div>
-            <p>Hecho con <span role="img" aria-label="heart">❤️</span> en BA.</p>
+            <p>Copyright © <span >Skillwave</span> - By Hernan Clich</p>
         </footer>
     );
 }

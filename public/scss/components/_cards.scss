@@ -1,4 +1,4 @@
-.cards-wrapper, .services-wrapper {
+.cards-wrapper {
     @include marg-padd-0;
     min-height: 60vh;
     min-width: 100%;
@@ -9,12 +9,7 @@
     flex-wrap: wrap;
 }
 
-.services-wrapper { 
-    position: relative;
-    background-color: rgba(0, 69, 180, 0.9);
-}
-
-.card, .serv {
+.card {
     margin-top: 1rem;
     padding-top: 3rem;
     display: flex;
@@ -24,7 +19,7 @@
     flex: 1 1 0;
 }
 
-.card-container, .serv-container {
+.card-container {
     @include marg-padd-0;
     display: flex;
     justify-content: center;
@@ -38,8 +33,7 @@
     }
 }
 
-.clients,
-.services {
+.clients {
     min-width: 350px;
     width: 50%;
     position: relative;
@@ -50,12 +44,7 @@
     }
 }
 
-.services {
-    margin-top: 3rem;
-}
-
-.candidates,
-.services {
+.candidates {
     min-width: 350px;
     width: 50%;
     position: relative;
@@ -66,7 +55,7 @@
     }
 }
 
-.card-text, .serv-text {
+.card-text {
     margin-bottom: 0;
     height: 60%;
     width: 90%;
@@ -92,7 +81,8 @@
         margin-top: 0.75rem;
         padding: 0.8rem;
         text-decoration: none;
-        border-radius: 2.5%;
+        // border-radius: 2.5%;
+        border-radius: 50em;
         color: $whiteSolid;
         border: 0.2rem solid rgb(0, 165, 165);
         background-color: rgb(0, 165, 165);

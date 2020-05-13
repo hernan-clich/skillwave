@@ -10,7 +10,7 @@ import Tag from './Tag';
 
 function App() {
     return (
-        <div>
+        <div className="bg">
             <Header />
             <Hero />
             <div className="intro">
@@ -21,14 +21,14 @@ function App() {
                 <Card 
                     iconUrl="/web-icons-company.png"
                     typeOfCard="clients"
-                    cardTitle="¿Por qué nos eligen nuestros clientes?" 
+                    cardTitle="¿Tu compañía está en pleno crecimiento?" 
                     cardText="Con nosotros tendrás la posibilidad de conocer a profesionales del mundo de la tecnología con los más altos estándares de calidad."
                     cardButton="Soy una empresa"
                 />
                 <Card 
                     iconUrl="/web-icons-candidate.png"
                     typeOfCard="candidates"
-                    cardTitle="¿Por qué pertenecer a la comunidad de SkillWave?" 
+                    cardTitle="¿Estas abierto a nuevas posibilidades?" 
                     cardText="Con nosotros potenciaras tu carrera con las mejores oportunidades,  descubriras nuevos proyectos y recibiras coaching de carrera."
                     cardButton="Soy un profesional"
                 />
@@ -39,21 +39,17 @@ function App() {
                 span3="posibilidades"
                 imgUrl="url(./man-jumps-from-to-water-1168742.jpg)"
             />
-            <div className="cards-wrapper services-wrapper">
-                <Tag label="Services"/>
+            <div className="serv-header">
+                <h3>¿Qué ofrecemos?</h3>
+            </div>
+            <div className="serv-container">
                 <Services 
-                    iconUrl="/web-icons-company.png"
-                    typeOfCard="services"
-                    cardTitle="¿Por qué nos eligen nuestros clientes?" 
-                    cardText="Con nosotros tendrás la posibilidad de conocer a profesionales del mundo de la tecnología con los más altos estándares de calidad."
-                    cardButton="Soy una empresa"
+                    servTitle="Talent Search" 
+                    servText="Conectamos personas talentosas con nuevos proyectos desafiantes."
                 />
                 <Services 
-                    iconUrl="/web-icons-candidate.png"
-                    typeOfCard="services"
-                    cardTitle="¿Por qué pertenecer a la comunidad de SkillWave?" 
-                    cardText="Con nosotros potenciaras tu carrera con las mejores oportunidades,  descubriras nuevos proyectos y recibiras coaching de carrera."
-                    cardButton="Soy un profesional"
+                    servTitle="Coaching Laboral" 
+                    servText="Brindamos asistencia para el logro de resultados, acompañando cada etapa de la vida profesional."
                 />
             </div>
             <Contact>

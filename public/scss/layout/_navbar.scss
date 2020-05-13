@@ -6,7 +6,7 @@
     width: 100vw;
     padding: 16px 30px;
     justify-content: flex-end;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     position: fixed;
     z-index: 3;
     box-shadow: 8px 8px 4px -9px rgba(0, 0, 0, 0.75);
@@ -40,10 +40,10 @@
         letter-spacing: 0.075rem;
         text-decoration: none;
         position: relative;
-        color: rgba(0, 82, 149,0.99);
+        color: rgb(0, 19, 83);
 
         &:hover {
-            color: rgba(0, 82, 149,0.6);
+            color: rgb(74, 129, 167);
         }
 
         &:active {
