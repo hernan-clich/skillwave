@@ -1,0 +1,46 @@
+// For highlighting the navbar links
+
+@keyframes navyEffect {
+    0% {
+        height: 10%;
+        width: 0%;
+    }
+
+    100% {
+        height: 10%;
+        width: 100%;
+    }
+
+    // 100%{
+    //     background-color: rgba(66, 66, 66, 0.9);
+    //     height: 250%;
+    //     width: 160%;
+    //     color: rgba(0, 119, 255, 0.74);
+    // }
+}
+
+// To open and close sidebar menu
+
+@keyframes open-menu {
+    0% {
+        transform: translateX(100%);
+        background-color: $whiteTransp;
+    }
+
+    100% {
+        transform: translateX(0%);
+        background-color: $whiteSolid;
+    }
+}
+
+// @keyframes close-menu {
+//     0% {
+//         transform: translateX(0%);
+//         background-color: $whiteSolid;
+//     }
+
+//     100% {
+//         transform: translateX(100%);
+//         background-color: $whiteTransp;
+//     }
+// }

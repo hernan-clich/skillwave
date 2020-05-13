@@ -1,0 +1,126 @@
+.navbar-desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 3.2em;
+    width: 100vw;
+    padding: 16px 30px;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    z-index: 3;
+    box-shadow: 8px 8px 4px -9px rgba(0, 0, 0, 0.75);
+}
+
+.logo-img {
+    margin-right: auto;
+    max-height: 45px;
+    padding: 5px 0 0 10px;
+}
+
+@media only screen and (min-width: 769px) {
+
+    .box {
+        margin: auto 0;
+        padding: 16px 30px;
+        flex-basis: 0.5em;
+        flex-shrink: 1;
+        text-align: center;
+        transition: background-color 300ms;
+
+        &:nth-child(5) {
+            margin-right: 5rem;
+        }
+    }
+
+    .nav-link {
+        font-family: $montserrat;
+        font-size: 1rem;
+        font-weight: bolder;
+        letter-spacing: 0.075rem;
+        text-decoration: none;
+        position: relative;
+        color: rgba(0, 82, 149,0.99);
+
+        &:hover {
+            color: rgba(0, 82, 149,0.6);
+        }
+
+        &:active {
+            color: rgba(0, 165, 165, 0.35);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 10%;
+            bottom: -30%;
+            left: 0%;
+            background-color: rgba(0, 82, 149,0.99);
+            transform-origin: center;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            animation: navyEffect 150ms normal linear forwards;
+        }
+    }
+
+    .secondary .nav-link {
+        color: $whiteSolid;
+        &:hover {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        &::before {
+            background-color: $whiteSolid;
+        }
+        &:active {
+            color: rgba(206, 206, 206, 0.267);
+        }
+    }
+
+    .navbar-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .navbar-mobile .closed {
+        @include nav-mob;
+        // animation: close-menu 500ms normal forwards;
+    }
+
+    .navbar-mobile .open {
+        @include nav-mob;
+        width: 80%;
+        animation: open-menu 500ms normal both;
+    }
+
+    .navbar-mobile li {
+        color: rgb(23, 138, 192);
+        margin: 3.5% auto;
+        padding: 5%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        list-style-type: none;
+        cursor: pointer;
+    }
+
+    .nav-link {
+        display: none;
+    }
+}
+
+.secondary {
+    background-color: $blackSolid;
+    color: $whiteSolid;
+    margin: auto 0;
+    padding: 16px 30px;
+    flex-basis: 60px;
+    text-align: center;
+    transition: background-color 300ms;
+}
