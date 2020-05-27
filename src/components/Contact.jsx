@@ -2,22 +2,22 @@ import React from 'react';
 
 function Contact(props) {
     return (
-        <div className="contact">
+        <div className="contact" id="contact">
             {props.children}
-            <form>
+            <form autoComplete="off">
                 <div className="input-wrapper">
-                    <label htmlFor="full-name">Full Name:</label>
+                    <label htmlFor="full-name">{props.labelOne}</label>
                     <input type="text" id="full-name"></input>
                 </div>
                 <div className="input-wrapper">
-                    <label htmlFor="email">Your email adress:</label>
+                    <label htmlFor="email">{props.labelTwo}</label>
                     <input type="email" id="email"></input>
                 </div>
                 <div className="text-wrapper">
-                    <label htmlFor="message">Your message:</label>
+                    <label htmlFor="message">{props.labelThree}</label>
                     <textarea id="message" rows="4" cols="10"></textarea>
                 </div>
-                <button>Enviar</button>
+                <button>{props.btnText}</button>
             </form>
         </div>
     );

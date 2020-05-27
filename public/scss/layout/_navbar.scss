@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    height: 3.2em;
+    height: 4em;
     width: 100vw;
-    padding: 16px 30px;
+    padding: 0 1.8em;
     justify-content: flex-end;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
     position: fixed;
     z-index: 3;
     box-shadow: 8px 8px 4px -9px rgba(0, 0, 0, 0.75);
@@ -14,33 +14,33 @@
 
 .logo-img {
     margin-right: auto;
-    max-height: 45px;
-    padding: 5px 0 0 10px;
+    width: 12.25rem;
+    height: 2.75rem;
+    padding: 0.6em 0 0 0.6em;
 }
 
 @media only screen and (min-width: 769px) {
 
     .box {
         margin: auto 0;
-        padding: 16px 30px;
+        padding: 0 1.25em;
         flex-basis: 0.5em;
         flex-shrink: 1;
         text-align: center;
         transition: background-color 300ms;
-
-        &:nth-child(5) {
-            margin-right: 5rem;
-        }
+        
     }
 
     .nav-link {
-        font-family: $montserrat;
+        font-family: Helvetica, sans-serif;
         font-size: 1rem;
-        font-weight: bolder;
-        letter-spacing: 0.075rem;
+        font-weight: 600;
+        letter-spacing: -0.015rem;
         text-decoration: none;
         position: relative;
-        color: rgb(0, 19, 83);
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        white-space: nowrap;
 
         &:hover {
             color: rgb(74, 129, 167);
@@ -67,6 +67,28 @@
         }
     }
 
+    .nav-icons {
+        display: flex;
+        img:nth-child(1) {
+            margin-right: 1.75em;
+            width: 1.75rem;
+            cursor: pointer;
+            &:hover ~ .lang-toggler {
+                opacity: 1;
+            }
+        }
+        
+        a {
+            margin: 0.9em 3.75em 0 0;
+            width: 4rem;
+            display: block;
+            position: relative;
+            img:nth-child(1) {
+                width: 2.25rem;
+            }
+        }
+    }
+
     .secondary .nav-link {
         color: $whiteSolid;
         &:hover {
@@ -85,6 +107,16 @@
     }
 }
 
+@media only screen and (max-width: 845px) {
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    .box {
+        padding: 1em 0.8em;
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     .navbar-mobile .closed {
@@ -95,6 +127,7 @@
     .navbar-mobile .open {
         @include nav-mob;
         width: 80%;
+        margin-top: 4em;
         animation: open-menu 500ms normal both;
     }
 
@@ -110,7 +143,7 @@
         cursor: pointer;
     }
 
-    .nav-link {
+    .nav-link, .nav-icons {
         display: none;
     }
 }
@@ -119,8 +152,12 @@
     background-color: $blackSolid;
     color: $whiteSolid;
     margin: auto 0;
-    padding: 16px 30px;
+    padding: 0em 1.8em;
     flex-basis: 60px;
     text-align: center;
     transition: background-color 300ms;
+    .nav-icons > img {
+            filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(99deg) brightness(110%) contrast(104%);
+        }
 }
+

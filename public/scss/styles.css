@@ -18,12 +18,14 @@
 
 html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  scroll-behavior: smooth; }
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  line-height: 1.6; }
   body::selection {
     background-color: rgba(0, 255, 255, 0.6);
     color: red; }
@@ -34,9 +36,9 @@ body {
 @media only screen and (max-width: 768px) {
   .burger-cont {
     position: relative;
-    height: 45px;
-    width: 45px;
-    margin-right: 3.7rem;
+    height: 2.8rem;
+    width: 2.8rem;
+    margin: 0.5em -1em 0 0;
     background-color: rgba(73, 73, 73, 0.5); }
     .burger-cont:hover {
       background-color: rgba(73, 73, 73, 0.58);
@@ -98,8 +100,6 @@ body {
       top: 0rem; } }
 
 .cards-wrapper {
-  margin: 0;
-  padding: 0;
   min-height: 60vh;
   min-width: 100%;
   display: flex;
@@ -109,8 +109,8 @@ body {
   flex-wrap: wrap; }
 
 .card {
-  margin-top: 1rem;
-  padding-top: 3rem;
+  margin: 1.5em 0 1em;
+  padding-top: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,14 +118,13 @@ body {
   flex: 1 1 0; }
 
 .card-container {
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50vh; }
+  min-height: 50vh;
+  margin-top: 1em; }
   .card-container img {
-    width: 5.5rem;
+    width: 15%;
     position: absolute;
     top: 0%; }
 
@@ -135,7 +134,7 @@ body {
   position: relative; }
   .clients span {
     color: #00a5a5;
-    font-size: 1.25em; }
+    font-size: 1.25rem; }
 
 .candidates {
   min-width: 350px;
@@ -143,7 +142,7 @@ body {
   position: relative; }
   .candidates span {
     color: #00a5a5;
-    font-size: 1.25em; }
+    font-size: 1.25rem; }
 
 .card-text {
   margin-bottom: 0;
@@ -158,12 +157,14 @@ body {
   font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black; }
   .card-text h3 {
-    font-size: 1.3rem; }
+    font-size: 1.6rem;
+    color: #424242; }
   .card-text p {
-    font-weight: 600; }
+    font-weight: 600;
+    color: #646464; }
   .card-text a {
-    margin-top: 0.75rem;
-    padding: 0.8rem;
+    margin-top: 0.75em;
+    padding: 0.8em;
     text-decoration: none;
     border-radius: 50em;
     color: white;
@@ -175,6 +176,37 @@ body {
       color: #00a5a5;
       border: 0.2rem solid #00a5a5;
       background-color: white; }
+
+.lang-toggler {
+  background-color: rgba(245, 245, 245, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 9rem;
+  height: 6rem;
+  border-top: solid 0.2rem #0092e7;
+  position: absolute;
+  right: 5.5rem;
+  top: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 100ms ease-in; }
+  .lang-toggler:hover {
+    opacity: 1; }
+  .lang-toggler .lang {
+    width: 100%;
+    height: 50%;
+    padding-left: 0.75em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #004c79;
+    cursor: pointer; }
+    .lang-toggler .lang:hover {
+      background-color: #b6b6b6; }
 
 /*********** Parallax separator ***********/
 .paral-img {
@@ -192,7 +224,8 @@ body {
     align-items: center;
     flex-direction: column;
     max-width: 80%;
-    background-color: rgba(255, 255, 255, 0); }
+    background-color: rgba(255, 255, 255, 0);
+    line-height: normal; }
   .paral-img span {
     color: rgba(255, 255, 255, 0.65);
     font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -202,6 +235,10 @@ body {
 @media (max-width: 880px) {
   .paral-img span {
     font-size: 4.5rem; } }
+
+@media (max-width: 768px) {
+  .paral-img span {
+    font-size: 3.5rem; } }
 
 .tag {
   width: 200px;
@@ -219,8 +256,6 @@ body {
   left: 0; }
 
 .contact {
-  margin: 0;
-  padding: 0;
   min-height: 50vh;
   min-width: 100%;
   position: relative;
@@ -238,9 +273,9 @@ body {
     bottom: 0;
     right: 0;
     z-index: -1;
-    opacity: 0.4; }
+    opacity: 0.5; }
   .contact form {
-    margin: 9rem 6rem 6rem;
+    margin: 9em 6em 6em;
     width: 60rem;
     height: 60%;
     display: flex;
@@ -251,12 +286,12 @@ body {
     .contact form::before {
       content: '';
       position: absolute;
-      background-color: rgba(161, 161, 161, 0.8);
+      background-color: rgba(161, 161, 161, 0.5);
       width: 110%;
       height: 110%;
       border-radius: 0.5rem; }
   .contact .input-wrapper {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -269,15 +304,15 @@ body {
     top: -25%;
     left: 5%; }
   .contact input {
-    margin: 0.5rem 0.75rem;
-    padding-left: 1rem;
+    margin: 0.5em 0.75em;
+    padding-left: 1em;
     height: 3rem;
     font-size: 1rem;
     font-weight: 700;
     font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     flex: 1 1 100%; }
   .contact .text-wrapper {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -290,16 +325,16 @@ body {
       top: -1.25rem;
       left: 1.2rem; }
     .contact .text-wrapper textarea {
-      margin: 0.5rem 0.75rem;
-      padding: 1rem 0 0 1rem;
+      margin: 0.5em 0.75em;
+      padding: 1em 0 0 1em;
       font-size: 1rem;
       font-weight: 700;
       font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       flex: 1 1 100%; }
   .contact button {
     width: 8rem;
-    margin: 2rem 30% 1rem 30%;
-    padding: 0.8rem;
+    margin: 2em 30% 1em 30%;
+    padding: 0.8em;
     text-decoration: none;
     border-radius: 50em;
     color: white;
@@ -332,6 +367,9 @@ body {
   top: 7.5%;
   left: 0; }
 
+#contact {
+  scroll-margin-top: 4rem; }
+
 footer {
   display: flex;
   flex-flow: row nowrap;
@@ -341,13 +379,13 @@ footer {
   background-color: black;
   color: white;
   font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 0.95em; }
+  font-size: 0.9rem; }
   footer p {
-    margin: 1.5rem 0 1.5rem 7.5rem; }
+    margin: 1.5em 0 1.5em 7.5em; }
   footer span {
     color: rgba(0, 255, 255, 0.76);
     font-weight: bolder;
-    font-size: 1em; }
+    font-size: 1rem; }
 
 .footer-logo img {
   margin-bottom: 0;
@@ -356,9 +394,7 @@ footer {
 
 /*********** Video ***********/
 .hero {
-  background: url(/video-pattern.png) repeat;
-  margin: 0;
-  padding: 0;
+  background: rgba(12, 103, 131, 0.7) url(/video-pattern.png) repeat;
   min-height: 100vh;
   min-width: 100%;
   position: relative;
@@ -370,7 +406,7 @@ footer {
     margin: 1% auto;
     color: white;
     font-family: Titillium Web, sans-serif;
-    font-size: 7rem;
+    font-size: 8vw;
     font-weight: 1000;
     letter-spacing: 0.1rem;
     text-shadow: 0px 0px 20px black;
@@ -381,7 +417,7 @@ footer {
     margin: 1% auto;
     color: white;
     font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: 2rem;
+    font-size: 2.5vw;
     text-shadow: 0px 0px 20px black;
     display: block;
     position: relative;
@@ -404,8 +440,6 @@ footer {
 
 /*********** Intro ***********/
 .intro {
-  margin: 0;
-  padding: 0;
   background-color: white;
   height: 50vh;
   width: 100%;
@@ -417,16 +451,16 @@ footer {
 .intro h2 {
   margin-bottom: 0;
   padding: 0 10%;
-  color: black;
+  color: #363636;
   font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 2em;
-  font-weight: 1000;
+  font-size: 2rem;
   text-align: center;
-  display: inline-block; }
+  display: inline-block;
+  line-height: 1.5; }
 
 .intro h2 span {
   font-weight: bolder;
-  font-size: 2.7rem; }
+  font-size: 2.2rem; }
 
 @media (max-width: 768px) {
   .intro {
@@ -437,42 +471,46 @@ footer {
       font-weight: bolder;
       font-size: 2.3rem; } }
 
+#about-us {
+  scroll-margin-top: 4rem; }
+
 .navbar-desktop {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  height: 3.2em;
+  height: 4em;
   width: 100vw;
-  padding: 16px 30px;
+  padding: 0 1.8em;
   justify-content: flex-end;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   position: fixed;
   z-index: 3;
   box-shadow: 8px 8px 4px -9px rgba(0, 0, 0, 0.75); }
 
 .logo-img {
   margin-right: auto;
-  max-height: 45px;
-  padding: 5px 0 0 10px; }
+  width: 12.25rem;
+  height: 2.75rem;
+  padding: 0.6em 0 0 0.6em; }
 
 @media only screen and (min-width: 769px) {
   .box {
     margin: auto 0;
-    padding: 16px 30px;
+    padding: 0 1.25em;
     flex-basis: 0.5em;
     flex-shrink: 1;
     text-align: center;
     transition: background-color 300ms; }
-    .box:nth-child(5) {
-      margin-right: 5rem; }
   .nav-link {
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 1rem;
-    font-weight: bolder;
-    letter-spacing: 0.075rem;
+    font-weight: 600;
+    letter-spacing: -0.015rem;
     text-decoration: none;
     position: relative;
-    color: #001353; }
+    color: black;
+    text-transform: uppercase;
+    white-space: nowrap; }
     .nav-link:hover {
       color: #4a81a7; }
     .nav-link:active {
@@ -489,6 +527,21 @@ footer {
       z-index: -1; }
     .nav-link:hover::before {
       animation: navyEffect 150ms normal linear forwards; }
+  .nav-icons {
+    display: flex; }
+    .nav-icons img:nth-child(1) {
+      margin-right: 1.75em;
+      width: 1.75rem;
+      cursor: pointer; }
+      .nav-icons img:nth-child(1):hover ~ .lang-toggler {
+        opacity: 1; }
+    .nav-icons a {
+      margin: 0.9em 3.75em 0 0;
+      width: 4rem;
+      display: block;
+      position: relative; }
+      .nav-icons a img:nth-child(1) {
+        width: 2.25rem; }
   .secondary .nav-link {
     color: white; }
     .secondary .nav-link:hover {
@@ -499,6 +552,12 @@ footer {
       color: rgba(206, 206, 206, 0.267); }
   .navbar-mobile {
     display: none; } }
+
+@media only screen and (max-width: 845px) {
+  .nav-link {
+    font-size: 0.9rem; }
+  .box {
+    padding: 1em 0.8em; } }
 
 @media only screen and (max-width: 768px) {
   .navbar-mobile .closed {
@@ -532,6 +591,7 @@ footer {
     flex-direction: column;
     transform: translateX(100%);
     width: 80%;
+    margin-top: 4em;
     animation: open-menu 500ms normal both; }
   .navbar-mobile li {
     color: #178ac0;
@@ -543,21 +603,23 @@ footer {
     text-decoration: none;
     list-style-type: none;
     cursor: pointer; }
-  .nav-link {
+  .nav-link, .nav-icons {
     display: none; } }
 
 .secondary {
   background-color: black;
   color: white;
   margin: auto 0;
-  padding: 16px 30px;
+  padding: 0em 1.8em;
   flex-basis: 60px;
   text-align: center;
   transition: background-color 300ms; }
+  .secondary .nav-icons > img {
+    filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(99deg) brightness(110%) contrast(104%); }
 
 .serv-header {
   background-color: #70b8ca;
-  min-height: 40vh;
+  min-height: 35vh;
   min-width: 100%;
   position: relative;
   display: flex;
@@ -578,8 +640,8 @@ footer {
   align-items: center;
   flex-wrap: wrap; }
   .serv-container .serv {
-    padding: 0 3rem;
-    margin: 0 2rem 3rem;
+    padding: 0 3em;
+    margin: 0 2em 3em;
     background-color: white;
     min-height: 330px;
     width: 30%;
@@ -591,10 +653,16 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(-10%);
+    transform: translateY(-10%) scale(1);
     transition: transform ease 350ms; }
     .serv-container .serv:hover {
-      transform: translateY(-20%); }
+      transform: translateY(-20%) scale(1.05); }
+    .serv-container .serv h2 {
+      color: #424242;
+      font-size: 1.6rem; }
+    .serv-container .serv p {
+      color: #646464;
+      margin-top: 0.15em; }
 
 @media (max-width: 870px) {
   .serv-container {
@@ -603,9 +671,9 @@ footer {
     flex-direction: column;
     flex-wrap: wrap; }
     .serv-container .serv {
-      margin: 0 2rem 2rem;
+      margin: 0 2em 2em;
       min-height: 330px;
-      min-width: 70%;
+      width: 65%;
       transform: translateY(0); }
       .serv-container .serv:hover {
         transform: translateY(0); } }

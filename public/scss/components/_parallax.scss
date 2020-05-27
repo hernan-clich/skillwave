@@ -17,6 +17,7 @@
         flex-direction: column;
         max-width: 80%;
         background-color: $whiteTransp;
+        line-height: normal;
     }
 
     span {
@@ -31,6 +32,14 @@
     .paral-img {
         span {
             font-size: 4.5rem;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .paral-img {
+        span {
+            font-size: 3.5rem;
         }
     }
 }

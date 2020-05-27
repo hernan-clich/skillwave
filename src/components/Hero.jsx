@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Hero() {
+function Hero(props) {
     return (
             <div className="hero">
                 <h1>DIGITAL SKILLS</h1>
-                <p>Animate a nuevas posibilidades</p>
+                <p>{props.subtitle}</p>
                 <video className="hero-bg" autoPlay muted loop>
                 <source src="/video.mp4" type="video/mp4"/>
                 </video>

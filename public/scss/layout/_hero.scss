@@ -3,8 +3,7 @@
     //background-color: rgba(74, 0, 192, 0.4);
     //background-color: rgba(32, 167, 230, 1);
     // background-color: rgba(0, 255, 255, 0.8);
-    background: url(/video-pattern.png) repeat;
-    @include marg-padd-0;
+    background: rgba(12, 103, 131, 0.7) url(/video-pattern.png) repeat;
     min-height: 100vh;
     min-width: 100%;
     position: relative;
@@ -17,7 +16,7 @@
         margin: 1% auto;
         color: white;
         font-family: Titillium Web, sans-serif;
-        font-size: 7rem;
+        font-size: 8vw;
         font-weight: 1000;
         letter-spacing: 0.1rem;
         text-shadow: 0px 0px 20px black;
@@ -40,7 +39,7 @@
         margin: 1% auto;
         color: white;
         font-family: $montserrat;
-        font-size: 2rem;
+        font-size: 2.5vw;
         text-shadow: 0px 0px 20px black;
         display: block;
         position: relative;

@@ -1,6 +1,6 @@
 .serv-header {
     background-color: rgb(112, 184, 202);
-    min-height: 40vh;
+    min-height: 35vh;
     min-width: 100%;
     position: relative;
     display: flex;
@@ -23,8 +23,8 @@
     align-items: center;
     flex-wrap: wrap;
     .serv {
-        padding: 0 3rem;
-        margin: 0 2rem 3rem;
+        padding: 0 3em;
+        margin: 0 2em 3em;
         background-color: $whiteSolid;
         min-height: 330px;
         width: 30%;
@@ -36,10 +36,18 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        transform: translateY(-10%);
+        transform: translateY(-10%) scale(1);
         transition: transform ease 350ms;
         &:hover{
-            transform: translateY(-20%);
+            transform: translateY(-20%) scale(1.05);
+        }
+        h2 {
+            color: rgb(66, 66, 66);
+            font-size: 1.6rem;
+        }
+        p {
+            color: rgb(100, 100, 100);
+            margin-top: 0.15em;
         }
     }
 }
@@ -51,9 +59,9 @@
         flex-direction: column;
         flex-wrap: wrap;
         .serv {
-            margin: 0 2rem 2rem;
+            margin: 0 2em 2em;
             min-height: 330px;
-            min-width: 70%;
+            width: 65%;
             transform: translateY(0);
             &:hover{
                 transform: translateY(0);

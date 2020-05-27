@@ -1,5 +1,4 @@
 .cards-wrapper {
-    @include marg-padd-0;
     min-height: 60vh;
     min-width: 100%;
     display: flex;
@@ -10,8 +9,8 @@
 }
 
 .card {
-    margin-top: 1rem;
-    padding-top: 3rem;
+    margin: 1.5em 0 1em;
+    padding-top: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,14 +19,13 @@
 }
 
 .card-container {
-    @include marg-padd-0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-
+    margin-top: 1em;
     img {
-        width: 5.5rem;
+        width: 15%;
         position: absolute;
         top: 0%;
     }
@@ -40,7 +38,7 @@
 
     span {
         color: rgb(0, 165, 165);
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 }
 
@@ -51,7 +49,7 @@
 
     span {
         color: rgb(0, 165, 165);
-        font-size: 1.25em;
+        font-size: 1.25rem;
     }
 }
 
@@ -69,17 +67,19 @@
     color: $blackSolid;
 
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+        color: rgb(66, 66, 66);
         // margin-bottom: 0;
     }
 
     p {
         font-weight: 600;
+        color: rgb(100, 100, 100);
     }
 
     a {
-        margin-top: 0.75rem;
-        padding: 0.8rem;
+        margin-top: 0.75em;
+        padding: 0.8em;
         text-decoration: none;
         // border-radius: 2.5%;
         border-radius: 50em;

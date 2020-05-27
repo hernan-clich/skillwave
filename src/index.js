@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import App, { englishLang } from './components/App';
 
 ReactDOM.render(<App />, document.querySelector('#root'));
 
@@ -49,3 +49,16 @@ burgerContainer.addEventListener('click', () => {
         isNavBarOpen = false;
     }
 });
+
+// Required to toggle languages
+
+// const engLang = document.querySelector('.english');
+// const espLang = document.querySelector('.espanol');
+
+// engLang.addEventListener('click', e => {
+//     englishLang = true;
+// });
+
+// espLang.addEventListener('click', e => {
+//     englishLang = false;
+// });
