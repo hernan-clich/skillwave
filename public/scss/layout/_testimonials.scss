@@ -1,0 +1,136 @@
+.testimonials {
+    height: 95vh;
+    width: 100%;
+    background: url(/white-smartphone.png) no-repeat center;
+    background-size: cover;
+    text-align: center;
+    z-index: -1;
+
+    h2 {
+        color: rgba(0, 84, 144, 1);
+        font-size: 3vw;
+    }
+}
+
+.testi-layer {
+    height: 95vh;
+    width: 100%;
+    background-color: rgba(98, 179, 224, 0.75);
+    overflow: hidden;
+    position: relative;
+
+    .arrow {
+        width: 1.9rem;
+
+        svg path {
+            transition: fill 300ms ease-in;
+        }
+    }
+
+    .arrow-container-prev {
+        position: absolute;
+        top: 52%;
+        left: 10%;
+        cursor: pointer;
+
+        &:hover>svg path {
+            fill: white;
+        }
+    }
+
+    .arrow-container-next {
+        position: absolute;
+        top: 52%;
+        right: 10%;
+        cursor: pointer;
+
+        &:hover>svg path {
+            fill: white;
+        }
+    }
+}
+
+.testi-text-wrapper {
+    background-color: rgba(225, 241, 255, 0.58);
+    margin: 4em 20% 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+    transition: transform 1s ease;
+
+    p {
+        padding: 1.5em 2.5em 0;
+        font-size: 1.4rem;
+        font-style: oblique;
+        color: rgba(98, 98, 98, 1);
+    }
+
+    .open-quotes {
+        position: absolute;
+        width: 4.7rem;
+        height: 4rem;
+        top: -2em;
+        left: 45%;
+
+        path {
+            fill: rgba(0, 84, 144, 0.75);
+        }
+    }
+
+    span {
+        display: block;
+        padding: 0.5em;
+
+        &:nth-child(3) {
+            letter-spacing: 0.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+            color: rgb(49, 49, 49);
+        }
+    }
+}
+
+@media(max-width: 880px) {
+    .testi-text-wrapper {
+        p {
+            padding: 1em .5em 0;
+            font-size: 1rem;
+        }
+
+        .open-quotes {
+            width: 3.9rem;
+            top: -2.25em;
+            left: 42%;
+        }
+    }
+}
+
+.prev-testimonial {
+    animation: flipper 800ms 1 reverse ease forwards;
+}
+
+.next-testimonial {
+    animation: flipper 800ms 1 normal ease forwards;
+}
+
+@keyframes flipper {
+    10% {
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateX(-100%) rotateY(-90deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(100%) rotateY(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+}

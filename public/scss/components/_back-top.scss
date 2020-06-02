@@ -1,0 +1,24 @@
+footer a {
+    position: fixed;
+    bottom: 2em;
+    right: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+}
+
+@media (hover: hover) {
+    .back-top {
+        circle, g path {
+        transition: fill 150ms ease-in;
+    }
+        &:hover > circle {
+            fill: white;
+        }
+        &:hover > g path {
+            fill: #0092D0;
+            animation: rotate-arrow 900ms backwards;
+            transform-origin: 50% 50% 0;
+        }
+    }
+  }
+  

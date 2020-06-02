@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero(props) {
     return (
-            <div className="hero">
+            <div className="hero" id="hero">
                 <h1>DIGITAL SKILLS</h1>
                 <p>{props.subtitle}</p>
                 <video className="hero-bg" autoPlay muted loop>

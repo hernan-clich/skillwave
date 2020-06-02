@@ -26,14 +26,8 @@
     }
 }
 
-// @keyframes close-menu {
-//     0% {
-//         transform: translateX(0%);
-//         background-color: $whiteSolid;
-//     }
-
-//     100% {
-//         transform: translateX(100%);
-//         background-color: $whiteTransp;
-//     }
-// }
+@keyframes rotate-arrow {
+    to {
+        transform: rotate(360deg);
+    }
+}

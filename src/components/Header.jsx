@@ -11,7 +11,7 @@ function Header(props) {
             <div className="box"><a href="#contact" className="nav-link">{props.linkThree}</a></div>
             <div className="nav-icons">
                 <img className="nav-icon" alt="icon" src="./iconmonstr-globe-3.svg" />
-                <a href="https://www.linkedin.com/in/florencia-c-fernandez/" rel="external">
+                <a href="https://www.linkedin.com/in/florencia-c-fernandez/" target="_blank" rel="external noreferrer noopener nofollow">
                     <img src="linkedin-ico.png" alt="linkedin logo"/>
                 </a>
                 {props.children}

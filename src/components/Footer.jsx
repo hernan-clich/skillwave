@@ -1,4 +1,5 @@
 import React from 'react';
+import backToTopIcon from './Svgs';
 
 function Footer() {
     return (
@@ -7,6 +8,7 @@ function Footer() {
                 <img src="logo-bg.png" alt="logo" />    
             </div>
             <p>Copyright © <span >Skillwave</span> - By Hernan Clich</p>
+            <a className={`none`} href="#hero">{backToTopIcon()}</a>
         </footer>
     );
 }

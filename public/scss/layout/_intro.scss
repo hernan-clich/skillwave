@@ -13,7 +13,6 @@
     margin-bottom: 0;
     padding: 0 10%;
     color: rgb(54, 54, 54);
-    font-family: $montserrat;
     font-size: 2rem;
     // font-weight: 1000;
     text-align: center;
@@ -24,6 +23,15 @@
 .intro h2 span {
     font-weight: bolder;
     font-size: 2.2rem;
+}
+
+@media(min-width: 1300px) {
+    .intro h2 {
+        font-size: 2vw;
+    }
+    .intro h2 span {
+        font-size: 2.2vw;
+    }
 }
 
 @media(max-width: 768px) {

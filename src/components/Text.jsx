@@ -60,9 +60,45 @@ export const contentText = {
         labelOneEsp: "Nombre Completo:",
         labelTwoEng: "Your email adress:",
         labelTwoEsp: "Tu dirección de email:",
-        labelThreeEng: "Your message:",
-        labelThreeEsp: "Tu mensaje:",
+        labelThreeEng: "Looking for:",
+        labelThreeEsp: "¿Qué estas buscando?:",
         btnTextEng: "Send",
         btnTextEsp: "Enviar"
     }
 };
+
+export const testiEng = [
+    {
+        testiContentEng: '',
+        clientNameEng: 'GALIOU CLAUDIOU',
+        clientTitleEng: ''
+    },
+    {
+        testiContentEng: '',
+        clientNameEng: 'PANCHOU VILIA',
+        clientTitleEng: ''
+    },
+    {
+        testiContentEng: '',
+        clientNameEng: 'MARIOU',
+        clientTitleEng: ''
+    }
+];
+
+export const testiEsp =  [
+    {
+        testiContentEsp: '',
+        clientNameEsp: 'GALLO CLAUDIO',
+        clientTitleEsp: ''
+    },
+    {
+        testiContentEsp: '',
+        clientNameEsp: 'PANCHO VILLA',
+        clientTitleEsp: ''
+    },
+    {
+        testiContentEsp: '',
+        clientNameEsp: 'MARIO',
+        clientTitleEsp: ''
+    }
+];

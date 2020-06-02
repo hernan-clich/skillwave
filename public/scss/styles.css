@@ -16,22 +16,45 @@
     transform: translateX(0%);
     background-color: white; } }
 
+@keyframes rotate-arrow {
+  to {
+    transform: rotate(360deg); } }
+
 html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
 
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  line-height: 1.6; }
+  line-height: 1.6;
+  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
   body::selection {
     background-color: rgba(0, 255, 255, 0.6);
     color: red; }
 
 .none {
   display: none; }
+
+footer a {
+  position: fixed;
+  bottom: 2em;
+  right: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 3; }
+
+@media (hover: hover) {
+  .back-top circle, .back-top g path {
+    transition: fill 150ms ease-in; }
+  .back-top:hover > circle {
+    fill: white; }
+  .back-top:hover > g path {
+    fill: #0092D0;
+    animation: rotate-arrow 900ms backwards;
+    transform-origin: 50% 50% 0; } }
 
 @media only screen and (max-width: 768px) {
   .burger-cont {
@@ -154,7 +177,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black; }
   .card-text h3 {
     font-size: 1.6rem;
@@ -202,7 +224,6 @@ body {
     justify-content: flex-start;
     align-items: center;
     text-decoration: none;
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: #004c79;
     cursor: pointer; }
     .lang-toggler .lang:hover {
@@ -228,24 +249,22 @@ body {
     line-height: normal; }
   .paral-img span {
     color: rgba(255, 255, 255, 0.65);
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-weight: 1000;
-    font-size: 8rem; }
+    font-size: 10vw; }
 
 @media (max-width: 880px) {
   .paral-img span {
-    font-size: 4.5rem; } }
+    font-size: 12vw; } }
 
 @media (max-width: 768px) {
   .paral-img span {
-    font-size: 3.5rem; } }
+    font-size: 14vw; } }
 
 .tag {
   width: 200px;
   height: 50px;
   background-color: black;
   color: white;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bolder;
   text-transform: uppercase;
   display: flex;
@@ -254,6 +273,11 @@ body {
   position: absolute;
   top: 7.5%;
   left: 0; }
+
+@media (min-width: 1400px) {
+  .tag {
+    width: 6vw;
+    height: 2vh; } }
 
 .contact {
   min-height: 50vh;
@@ -298,7 +322,6 @@ body {
     align-items: center;
     flex: 1 1 50%; }
   .contact label {
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-weight: 700;
     position: absolute;
     top: -25%;
@@ -309,7 +332,6 @@ body {
     height: 3rem;
     font-size: 1rem;
     font-weight: 700;
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     flex: 1 1 100%; }
   .contact .text-wrapper {
     margin-top: 1.5em;
@@ -319,7 +341,6 @@ body {
     align-items: center;
     flex: 1 1 50%; }
     .contact .text-wrapper label {
-      font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       font-weight: 700;
       position: absolute;
       top: -1.25rem;
@@ -329,21 +350,21 @@ body {
       padding: 1em 0 0 1em;
       font-size: 1rem;
       font-weight: 700;
-      font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
       flex: 1 1 100%; }
   .contact button {
-    width: 8rem;
+    width: 32vw;
     margin: 2em 30% 1em 30%;
     padding: 0.8em;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
     border-radius: 50em;
     color: white;
     border: 0.2rem solid #00a5a5;
-    background-color: black;
+    background-color: #292929;
     transition-duration: 400ms;
     font-size: 1rem;
-    font-weight: 700;
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 600;
     display: block;
     z-index: 1; }
     .contact button:hover {
@@ -357,7 +378,6 @@ body {
   height: 50px;
   background-color: black;
   color: white;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bolder;
   text-transform: uppercase;
   display: flex;
@@ -378,7 +398,6 @@ footer {
   max-height: 20vh;
   background-color: black;
   color: white;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 0.9rem; }
   footer p {
     margin: 1.5em 0 1.5em 7.5em; }
@@ -416,7 +435,6 @@ footer {
   .hero p {
     margin: 1% auto;
     color: white;
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-size: 2.5vw;
     text-shadow: 0px 0px 20px black;
     display: block;
@@ -452,7 +470,6 @@ footer {
   margin-bottom: 0;
   padding: 0 10%;
   color: #363636;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 2rem;
   text-align: center;
   display: inline-block;
@@ -461,6 +478,12 @@ footer {
 .intro h2 span {
   font-weight: bolder;
   font-size: 2.2rem; }
+
+@media (min-width: 1300px) {
+  .intro h2 {
+    font-size: 2vw; }
+  .intro h2 span {
+    font-size: 2.2vw; } }
 
 @media (max-width: 768px) {
   .intro {
@@ -618,7 +641,8 @@ footer {
     filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(99deg) brightness(110%) contrast(104%); }
 
 .serv-header {
-  background-color: #70b8ca;
+  background: #7cc8db;
+  background: radial-gradient(circle, #7cc8db 0%, #70b8ca 50%, #33adcc 100%);
   min-height: 35vh;
   min-width: 100%;
   position: relative;
@@ -626,7 +650,6 @@ footer {
   justify-content: center;
   align-items: center; }
   .serv-header h3 {
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     color: white;
     font-size: 2.5rem; }
 
@@ -647,7 +670,6 @@ footer {
     width: 30%;
     border-radius: 2.5%;
     box-shadow: 0px 0px 17px -1px rgba(82, 82, 82, 0.24);
-    font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -677,3 +699,97 @@ footer {
       transform: translateY(0); }
       .serv-container .serv:hover {
         transform: translateY(0); } }
+
+.testimonials {
+  height: 95vh;
+  width: 100%;
+  background: url(/white-smartphone.png) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  z-index: -1; }
+  .testimonials h2 {
+    color: #005490;
+    font-size: 3vw; }
+
+.testi-layer {
+  height: 95vh;
+  width: 100%;
+  background-color: rgba(98, 179, 224, 0.75);
+  overflow: hidden;
+  position: relative; }
+  .testi-layer .arrow {
+    width: 1.9rem; }
+    .testi-layer .arrow svg path {
+      transition: fill 300ms ease-in; }
+  .testi-layer .arrow-container-prev {
+    position: absolute;
+    top: 52%;
+    left: 10%;
+    cursor: pointer; }
+    .testi-layer .arrow-container-prev:hover > svg path {
+      fill: white; }
+  .testi-layer .arrow-container-next {
+    position: absolute;
+    top: 52%;
+    right: 10%;
+    cursor: pointer; }
+    .testi-layer .arrow-container-next:hover > svg path {
+      fill: white; }
+
+.testi-text-wrapper {
+  background-color: rgba(225, 241, 255, 0.58);
+  margin: 4em 20% 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 55vh;
+  transition: transform 1s ease; }
+  .testi-text-wrapper p {
+    padding: 1.5em 2.5em 0;
+    font-size: 1.4rem;
+    font-style: oblique;
+    color: #626262; }
+  .testi-text-wrapper .open-quotes {
+    position: absolute;
+    width: 4.7rem;
+    height: 4rem;
+    top: -2em;
+    left: 45%; }
+    .testi-text-wrapper .open-quotes path {
+      fill: rgba(0, 84, 144, 0.75); }
+  .testi-text-wrapper span {
+    display: block;
+    padding: 0.5em; }
+    .testi-text-wrapper span:nth-child(3) {
+      letter-spacing: 0.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      color: #313131; }
+
+@media (max-width: 880px) {
+  .testi-text-wrapper p {
+    padding: 1em .5em 0;
+    font-size: 1rem; }
+  .testi-text-wrapper .open-quotes {
+    width: 3.9rem;
+    top: -2.25em;
+    left: 42%; } }
+
+.prev-testimonial {
+  animation: flipper 800ms 1 reverse ease forwards; }
+
+.next-testimonial {
+  animation: flipper 800ms 1 normal ease forwards; }
+
+@keyframes flipper {
+  10% {
+    opacity: 0.25; }
+  50% {
+    transform: translateX(-100%) rotateY(-90deg);
+    opacity: 0; }
+  60% {
+    transform: translateX(100%) rotateY(90deg);
+    opacity: 0; }
+  100% {
+    transform: translateX(0%) rotateY(0deg);
+    opacity: 1; } }

@@ -8,6 +8,7 @@ import LangPicker from './LangPicker';
 import ParalSeparator from './ParalSeparator';
 import Services from './Services';
 import Tag from './Tag';
+import Testimonials from './Testimonials';
 import {contentText} from './Text';
 
 function App() {
@@ -32,7 +33,6 @@ function App() {
                 <Tag label={englishLang ? contentText.tags.tagAboutEng : contentText.tags.tagAboutEsp}/>
                 <h2><span>Skillwave</span> {englishLang ? contentText.intro.introEng : contentText.intro.introEsp} </h2>
             </div>
-
             <div className="cards-wrapper">
                 <Card 
                     iconUrl="/web-icons-company.png"
@@ -68,6 +68,9 @@ function App() {
                     servText={englishLang ? contentText.services.serv2TextEng : contentText.services.serv2TextEsp} 
                 />
             </div>
+            <Testimonials 
+                testiState={englishLang}
+            />
             <Contact
                 labelOne={englishLang ? contentText.contact.labelOneEng : contentText.contact.labelOneEsp} 
                 labelTwo={englishLang ? contentText.contact.labelTwoEng : contentText.contact.labelTwoEsp} 
