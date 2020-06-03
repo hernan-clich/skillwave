@@ -1,46 +1,39 @@
-import React, {
-    useState,
-    useRef
-} from 'react';
-import {
-    openQuotes,
-    prevArrow
-} from './Svgs';
-import {
-    testiEng,
-    testiEsp
-} from './Text';
+import React, { useState, useEffect, useRef } from 'react';
+import { openQuotes, prevArrow } from './Svgs';
+import { testiEng, testiEsp } from './Text';
 
 function Testimonials(props) {
     const testiState = props.testiState;
     const testiCard = useRef();
     const clientNameRef = useRef();
-    const [clientName, setclientName] = useState(testiEng[2].clientNameEng);
+    const { testiContEng, clientNameEng, jobTitleEng } = testiEng;
+    const { testiContEsp, clientNameEsp, jobTitleEsp } = testiEsp;
+    const [testiCont, setTestiCont] = useState(testiContEng[2]);
+    const [clientName, setclientName] = useState(clientNameEng[2]);
+    const [jobTitle, setJobTitle] = useState(jobTitleEng[2]);
 
-    const clientIndex = () => {
-        return testiEng.findIndex(c => c === clientNameRef.current.innerText);
-    }
 
-    const clientSwapper = () => {
-        if (testiState) {
-            if (clientNameRef.current.innerText === testiEng[testiEng.length - 1]) {
-                setTimeout(() => {
-                    setclientName(testiEng[0].clientNameEng);
-                }, 399);
+    
+    const nextClient = ind => {
+        if(testiState){
+            if(clientNameRef.current.innerText === clientNameEng[2]){
+                setTestiCont(testiContEng[0]);
+                setclientName(clientNameEng[0]);
+                setJobTitle(jobTitleEng[0]);
             } else {
-                setTimeout(() => {
-                    setclientName(testiEng[clientIndex() + 1].clientNameEng);
-                }, 399);
+                setTestiCont(testiContEng[ind + 1]);
+                setclientName(clientNameEng[ind + 1]);
+                setJobTitle(jobTitleEng[ind + 1]);
             }
         } else {
-            if (clientNameRef.current.innerText === testiEsp[testiEsp.length - 1]) {
-                setTimeout(() => {
-                    setclientName(testiEsp[0].clientNameEsp);
-                }, 399);
+            if(clientNameRef.current.innerText === clientNameEsp[2]){
+                setTestiCont(testiContEsp[0]);
+                setclientName(clientNameEsp[0]);
+                setJobTitle(jobTitleEsp[0]);
             } else {
-                setTimeout(() => {
-                    setclientName(testiEsp[clientIndex() + 1].clientNameEsp);
-                }, 399);
+                setTestiCont(testiContEsp[ind + 1]);
+                setclientName(clientNameEsp[ind + 1]);
+                setJobTitle(jobTitleEsp[ind + 1]);
             }
         }
     }
@@ -51,28 +44,31 @@ function Testimonials(props) {
             testiCard.current.classList.remove('prev-testimonial');
         }, 799);
     }
-    setTimeout(() => {
-
-    }, 799);
 
     const nextSlideEffect = () => {
-        console.log(testiEng, testiState);
-        clientSwapper();
+        nextClient(testiState 
+            ? clientNameEng.findIndex(el => el === clientNameRef.current.innerText) 
+            : clientNameEsp.findIndex(el => el === clientNameRef.current.innerText)
+        );
         testiCard.current.classList.add('next-testimonial');
         setTimeout(() => {
             testiCard.current.classList.remove('next-testimonial');
         }, 799);
     }
 
+    useEffect(() => {
+        nextSlideEffect()
+    },[testiState]);
+
     return ( 
         <div className = "testimonials" >
             <div className = "testi-layer" >
-                <h2 > What our clients are saying </h2> 
+                <h2>{testiState ? 'What our clients are saying' : 'Qué dicen nuestros clientes'}</h2> 
                 <div ref = { testiCard } className = "testi-text-wrapper">
                     {openQuotes()}
-                    <p> Teníamos una búsqueda bastante específica y Florencia encontró un montón de candidatos con esas características.Pensé que no iba a ser tan fácil, pero tuvimos la posibilidad de elegir entre muy buenos perfiles. </p>
+                    <p>{testiCont}</p>
                     <span ref = {clientNameRef}>{clientName}</span>
-                    <span> CEO - Google </span>
+                    <span>{jobTitle}</span>
                 </div>
                 <div className = "arrow-container-prev" onClick = {prevSlideEffect}> 
                     {prevArrow()}

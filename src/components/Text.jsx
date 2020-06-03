@@ -67,38 +67,14 @@ export const contentText = {
     }
 };
 
-export const testiEng = [
-    {
-        testiContentEng: '',
-        clientNameEng: 'GALIOU CLAUDIOU',
-        clientTitleEng: ''
-    },
-    {
-        testiContentEng: '',
-        clientNameEng: 'PANCHOU VILIA',
-        clientTitleEng: ''
-    },
-    {
-        testiContentEng: '',
-        clientNameEng: 'MARIOU',
-        clientTitleEng: ''
-    }
-];
+export const testiEng =  {
+    testiContEng : ['Good', 'Bad', 'Great'],
+    clientNameEng: ['GALIOI CLAUDIOO', 'PANCHOU VILIA', 'MARIOU'],
+    jobTitleEng: ['CEO at Google', 'CFO at Amazon', 'Ninja at UK']
+};
 
-export const testiEsp =  [
-    {
-        testiContentEsp: '',
-        clientNameEsp: 'GALLO CLAUDIO',
-        clientTitleEsp: ''
-    },
-    {
-        testiContentEsp: '',
-        clientNameEsp: 'PANCHO VILLA',
-        clientTitleEsp: ''
-    },
-    {
-        testiContentEsp: '',
-        clientNameEsp: 'MARIO',
-        clientTitleEsp: ''
-    }
-];
+export const testiEsp =  {
+    testiContEsp : ['Bueno', 'Malo', 'Genial'],
+    clientNameEsp: ['GALLO CLAUDIO', 'PANCHO VILLA', 'MARIO'],
+    jobTitleEsp: ['Capo en Google', 'Number uan en Amazon', 'Ninja argento']
+};
