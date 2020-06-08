@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { openQuotes, prevArrow } from './Svgs';
 import { testiEng, testiEsp } from './Text';
 
@@ -12,9 +12,31 @@ function Testimonials(props) {
     const [clientName, setclientName] = useState(clientNameEng[2]);
     const [jobTitle, setJobTitle] = useState(jobTitleEng[2]);
 
+    const prevClient = ind => {
+        if(testiState){
+            if(clientNameRef.current.innerText === clientNameEng[0]){
+                setTestiCont(testiContEng[clientNameEng.length - 1]);
+                setclientName(clientNameEng[clientNameEng.length - 1]);
+                setJobTitle(jobTitleEng[clientNameEng.length - 1]);
+            } else {
+                setTestiCont(testiContEng[ind - 1]);
+                setclientName(clientNameEng[ind - 1]);
+                setJobTitle(jobTitleEng[ind - 1]);
+            }
+        } else {
+            if(clientNameRef.current.innerText === clientNameEsp[0]){
+                setTestiCont(testiContEsp[clientNameEng.length - 1]);
+                setclientName(clientNameEsp[clientNameEng.length - 1]);
+                setJobTitle(jobTitleEsp[clientNameEng.length - 1]);
+            } else {
+                setTestiCont(testiContEsp[ind - 1]);
+                setclientName(clientNameEsp[ind - 1]);
+                setJobTitle(jobTitleEsp[ind - 1]);
+            }
+        }
+    }
 
-    
-    const nextClient = ind => {
+    const nextClient = useCallback(ind => {
         if(testiState){
             if(clientNameRef.current.innerText === clientNameEng[2]){
                 setTestiCont(testiContEng[0]);
@@ -36,29 +58,37 @@ function Testimonials(props) {
                 setJobTitle(jobTitleEsp[ind + 1]);
             }
         }
-    }
+    }, [clientNameEng, clientNameEsp, jobTitleEng, jobTitleEsp, testiContEng, testiContEsp, testiState])
 
     const prevSlideEffect = () => {
+        setTimeout(() => {
+            prevClient(testiState 
+                ? clientNameEng.findIndex(el => el === clientNameRef.current.innerText) 
+                : clientNameEsp.findIndex(el => el === clientNameRef.current.innerText)
+            );
+        }, 399);
         testiCard.current.classList.add('prev-testimonial');
         setTimeout(() => {
             testiCard.current.classList.remove('prev-testimonial');
         }, 799);
     }
 
-    const nextSlideEffect = () => {
-        nextClient(testiState 
-            ? clientNameEng.findIndex(el => el === clientNameRef.current.innerText) 
-            : clientNameEsp.findIndex(el => el === clientNameRef.current.innerText)
-        );
+    const nextSlideEffect = useCallback(() => {
+        setTimeout(() => {
+            nextClient(testiState 
+                ? clientNameEng.findIndex(el => el === clientNameRef.current.innerText) 
+                : clientNameEsp.findIndex(el => el === clientNameRef.current.innerText)
+            );
+        }, 399);
         testiCard.current.classList.add('next-testimonial');
         setTimeout(() => {
             testiCard.current.classList.remove('next-testimonial');
         }, 799);
-    }
+    }, [clientNameEng, clientNameEsp, nextClient, testiState]);
 
     useEffect(() => {
-        nextSlideEffect()
-    },[testiState]);
+        nextSlideEffect();
+    },[nextSlideEffect, testiState]);
 
     return ( 
         <div className = "testimonials" >

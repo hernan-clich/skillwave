@@ -76,6 +76,9 @@ function App() {
                 labelTwo={englishLang ? contentText.contact.labelTwoEng : contentText.contact.labelTwoEsp} 
                 labelThree={englishLang ? contentText.contact.labelThreeEng : contentText.contact.labelThreeEsp} 
                 btnText={englishLang ? contentText.contact.btnTextEng : contentText.contact.btnTextEsp} 
+                errorName={englishLang ? contentText.contact.errorNameEng : contentText.contact.errorNameEsp} 
+                errorEmail={englishLang ? contentText.contact.errorEmailEng : contentText.contact.errorEmailEsp} 
+                errorMsg={englishLang ? contentText.contact.errorMsgEng : contentText.contact.errorMsgEsp} 
             >
                 <Tag label={englishLang ? contentText.tags.tagContactEng : contentText.tags.tagContactEsp}/>
             </Contact>

@@ -63,18 +63,32 @@ export const contentText = {
         labelThreeEng: "Looking for:",
         labelThreeEsp: "¿Qué estas buscando?:",
         btnTextEng: "Send",
-        btnTextEsp: "Enviar"
+        btnTextEsp: "Enviar",
+        errorNameEng: "Please, write a valid name",
+        errorNameEsp: "Por favor, ingresar un nombre válido",
+        errorEmailEng: "Please, write a valid adress, e.g: john@mydomain.com",
+        errorEmailEsp: "Por favor, ingresar una dirección de email válida, ej: juan@midominio.com",
+        errorMsgEng: "Please, write a message",
+        errorMsgEsp: "Por favor, ingresar un mensaje"
     }
 };
 
 export const testiEng =  {
-    testiContEng : ['Good', 'Bad', 'Great'],
-    clientNameEng: ['GALIOI CLAUDIOO', 'PANCHOU VILIA', 'MARIOU'],
-    jobTitleEng: ['CEO at Google', 'CFO at Amazon', 'Ninja at UK']
+    testiContEng : [
+        "We had a fairly specific Full Stack developer opening and Florencia found several candidates with the specified characteristics. I never thought it was going to be that easy, but we had the possibility to choose between top-notch profiles. Throughout the entire process, there was an undoubted sense of affinity, I felt super comfortable the entire time, and Flor persevered until finding a candidate that really fulfilled our expectations.", 
+        "Increadibly pleased with the service they provide, they make searches and communication very dynamic and smooth. They adapt to changes in the requested requirements surprisingly well and in a short time notice (something incredible in this field!). They provided us superior quality candidates. Florencia is always accommodating and perceptive.",
+        "Florencia has been giving us excellent support with Full Stack Sr developers job searches . From day one I perceived agility and responsiveness, Flor is particularly receptive in matters of profile changes, interview scheduling and follow-ups. She's reliable and generates great results in the short term, which is surprising considering how fast profiles move in this market."
+    ],
+    clientNameEng: ['LUCAS JANON', 'MICAELA LABONIA', 'ANA VANESSA VALERA SANCHEZ'],
+    jobTitleEng: ['Co–Founder - Designstripe', 'HR On-boarding & People Experience Analyst - Baufest ', 'Senior Recruiter, Human Capital & Sustainability - Grupo ASSA']
 };
 
 export const testiEsp =  {
-    testiContEsp : ['Bueno', 'Malo', 'Genial'],
-    clientNameEsp: ['GALLO CLAUDIO', 'PANCHO VILLA', 'MARIO'],
-    jobTitleEsp: ['Capo en Google', 'Number uan en Amazon', 'Ninja argento']
+    testiContEsp : [
+        'Teníamos una búsqueda de developer Full Stack bastante específica y Florencia encontró un montón de candidatos con esas características. Pensé que no iba a ser tan fácil, pero tuvimos la posibilidad de elegir entre muy buenos perfiles. Durante todo el proceso, hubo buena onda, me sentí super cómodo y Flor perseveró hasta llegar a un candidato que realmente nos convenció.', 
+        'Muy conforme con el servicio que brindan, hacen las búsquedas y comunicación muy dinámicas y fluidas. Se adaptan a los requerimientos solicitados muy bien y en poco tiempo (algo increíble en este rubro!) presentan candidatos de calidad. Florencia se muestra siempre predispuesta y atenta', 
+        'Florencia nos ha estado dando un excelente soporte con búsquedas de desarolladores Sr Full-Stack. Desde el día uno percibí agilidad y buena respuesta, Flor es muy receptiva en temas de cambios del perfil, agenda de entrevistas y de seguimiento. Es confiable y genera buenos resultados en el corto plazo, considerando lo rapido que se mueven estos perfiles.'
+    ],
+    clientNameEsp: ['LUCAS JANON', 'MICAELA LABONIA', 'ANA VANESSA VALERA SANCHEZ'],
+    jobTitleEsp: ['Co–Founder - Designstripe', 'HR On-boarding & People Experience Analyst - Baufest ', 'Senior Recruiter, Human Capital & Sustainability - Grupo ASSA']
 };
