@@ -6,6 +6,7 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    background: linear-gradient(0deg, rgba(65,146,167,0.8) 0%, rgba(255,255,255,1) 12%); 
 }
 
 .card {
@@ -23,11 +24,24 @@
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-    margin-top: 1em;
+    margin: 1em 0 3em;
+
     img {
+        min-width: 75px;
         width: 15%;
         position: absolute;
-        top: 0%;
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media(max-width: 580px) {
+    .card-container img {
+        width: 20%;
+        position: absolute;
+        top: -5%;
+
     }
 }
 
@@ -76,18 +90,22 @@
         color: rgb(100, 100, 100);
     }
 
-    a {
-        margin-top: 0.75em;
-        padding: 0.8em;
-        text-decoration: none;
-        // border-radius: 2.5%;
-        border-radius: 50em;
-        color: $whiteSolid;
-        border: 0.2rem solid rgb(0, 165, 165);
-        background-color: rgb(0, 165, 165);
-        transition-duration: 400ms;
-        font-size: 1.1rem;
+    // a {
+    //     margin-top: 0.75em;
+    //     padding: 0.8em;
+    //     text-decoration: none;
+    //     // border-radius: 2.5%;
+    //     border-radius: 50em;
+    //     color: $whiteSolid;
+    //     border: 0.2rem solid rgb(0, 165, 165);
+    //     background-color: rgb(0, 165, 165);
+    //     transition-duration: 400ms;
+    //     font-size: 1.1rem;
+    // }
+}
 
+@media (hover: hover) {
+    .card-text a {
         &:hover {
             color: rgb(0, 165, 165);
             border: 0.2rem solid rgb(0, 165, 165);

@@ -10,7 +10,7 @@ function Card(props) {
                 <div className="card-text">
                     <h3>{props.cardTitle}</h3>
                     <p>{props.cardText}</p>
-                    <a href="#contact">{props.cardButton}</a>
+                    {/* <a href="#contact">{props.cardButton}</a> */}
                 </div>
             </div>
         </div>

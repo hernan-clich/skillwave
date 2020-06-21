@@ -1,14 +1,13 @@
 .contact {
-    // background-color: rgba(0, 255, 255, 0.37);
     min-height: 50vh;
-    min-width: 100%;
     position: relative;
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
 
-    &::after{
+    &::before {
         background: url(/abstract-painting-1546249.jpg) center;
         background-size: 200%;
         content: '';
@@ -20,25 +19,87 @@
         z-index: -1;
         opacity: 0.5;
     }
+}
+
+.contact-card {
+    background-color: rgba(59, 59, 59, 1);
+    min-width: 15rem;
+    width: 21rem;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateX(10%);
+
+    h3,
+    .contact-detail {
+        color: $whiteSolid;
+        margin: 0 0 0 4em;
+    }
+
+    h3 {
+        margin: 1em;
+        align-self: center;
+    }
+
+    p {
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+
+    .contact-detail {
+        position: relative;
+    }
+
+    .contact-icon {
+        position: absolute;
+        left: -2.5rem;
+        top: 20%;
+    }
+}
+
+.cont-form {
+    // background-color: rgba(0, 255, 255, 0.37);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    transform: translateX(-20%);
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: rgba(238, 238, 238, 0.7);
+        top: 10%;
+        width: 110%;
+        height: 80%;
+    }
+
+    .input-wrapper,
+    .text-wrapper {
+        margin-left: 10em;
+    }
 
     form {
-        margin: 9em 6em 6em;
-        width: 60rem;
+        margin: 6em 0;
+        width: 35rem;
         height: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         position: relative;
-        &::before{
-            content: '';
-            position: absolute;
-            background-color: rgba(161, 161, 161, 0.5);  
-            width: 110%;
-            height: 110%;
-            border-radius: 0.5rem;
-        }
+        z-index: 0;
+
+
     }
+
+
 
     .input-wrapper {
         margin-top: 1.5em;
@@ -92,7 +153,6 @@
         }
     }
 
-
     button {
         width: 32vw;
         margin: 2em 30% 1em 30%;
@@ -100,8 +160,7 @@
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 0.05rem;
-        // border-radius: 2.5%;
-        border-radius: 50em;
+        border-radius: 10px;
         color: $whiteSolid;
         border: 0.2rem solid rgb(0, 165, 165);
         background-color: rgb(41, 41, 41);
@@ -120,16 +179,17 @@
 }
 
 .invalid {
-    outline: none; 
+    outline: none;
     border: 2px solid crimson;
-    &:focus{
-        outline: none; 
+
+    &:focus {
+        outline: none;
         border: 2px solid crimson;
-      
+
     }
 }
 
-input + p {
+input+p {
     margin: 0 1em;
     color: rgb(160, 0, 32);
     font-weight: bolder;
@@ -138,12 +198,12 @@ input + p {
     height: 0;
 }
 
-input.invalid + p {
+input.invalid+p {
     opacity: 1;
     height: auto;
 }
 
-textarea + p {
+textarea+p {
     margin: 0 1em;
     color: rgb(160, 0, 32);
     font-weight: bolder;
@@ -152,18 +212,19 @@ textarea + p {
     height: 0;
 }
 
-textarea.invalid + p {
+textarea.invalid+p {
     opacity: 1;
     height: auto;
 }
 
 .valid {
-    outline: none; 
+    outline: none;
     border: 2px solid rgb(36, 139, 53);
-    &:focus{
-        outline: none; 
+
+    &:focus {
+        outline: none;
         border: 2px solid rgb(36, 139, 53);
-      
+
     }
 }
 
@@ -171,6 +232,38 @@ textarea.invalid + p {
     @include tags;
 }
 
-#contact {
-    scroll-margin-top: 4rem;
+@media only screen and (max-width: 912px) {
+
+    .contact {
+        height: 190vh;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-card {
+        transform: translateX(0%);
+        margin: 1em;
+    }
+
+    .cont-form .input-wrapper,
+    .cont-form .text-wrapper {
+        margin-left: 0em;
+    }
+
+    .cont-form {
+        margin: 0;
+        transform: translateX(0%);
+        &::before {
+            top: 10%;
+            left: 0;
+            height: 90%;
+            width: 100%;
+        }
+        form {
+            margin-top: 2em;
+            width: 21rem;
+
+        }
+    }
 }

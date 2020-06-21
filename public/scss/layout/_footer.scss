@@ -1,26 +1,21 @@
 footer {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     position: sticky;
-    max-height: 20vh;
+    max-height: 15vh;
     background-color: rgb(0, 0, 0);
     color: $whiteSolid;
-    font-size: 0.9rem;
 
     p {
-        margin: 1.5em 0 1.5em 7.5em;
+        margin: 1.5em 0;
+        font-size: 0.9rem;
     }
 
     span {
         color: rgba(0, 255, 255, 0.76);
         font-weight: bolder;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
-}
-
-.footer-logo img {
-    margin-bottom: 0;
-    height: 100%;
-    position: absolute;
 }

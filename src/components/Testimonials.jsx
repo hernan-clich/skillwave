@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { openQuotes, prevArrow } from './Svgs';
 import { testiEng, testiEsp } from './Text';
 
-function Testimonials(props) {
+function Testimonials(props, ref) {
     const testiState = props.testiState;
     const testiCard = useRef();
     const clientNameRef = useRef();
     const { testiContEng, clientNameEng, jobTitleEng } = testiEng;
     const { testiContEsp, clientNameEsp, jobTitleEsp } = testiEsp;
-    const [testiCont, setTestiCont] = useState(testiContEng[2]);
-    const [clientName, setclientName] = useState(clientNameEng[2]);
-    const [jobTitle, setJobTitle] = useState(jobTitleEng[2]);
+    const [testiCont, setTestiCont] = useState(testiContEng[clientNameEng.length - 1]);
+    const [clientName, setclientName] = useState(clientNameEng[clientNameEng.length - 1]);
+    const [jobTitle, setJobTitle] = useState(jobTitleEng[clientNameEng.length - 1]);
 
     const prevClient = ind => {
         if(testiState){
@@ -38,7 +38,7 @@ function Testimonials(props) {
 
     const nextClient = useCallback(ind => {
         if(testiState){
-            if(clientNameRef.current.innerText === clientNameEng[2]){
+            if(clientNameRef.current.innerText === clientNameEng[clientNameEng.length - 1]){
                 setTestiCont(testiContEng[0]);
                 setclientName(clientNameEng[0]);
                 setJobTitle(jobTitleEng[0]);
@@ -48,7 +48,7 @@ function Testimonials(props) {
                 setJobTitle(jobTitleEng[ind + 1]);
             }
         } else {
-            if(clientNameRef.current.innerText === clientNameEsp[2]){
+            if(clientNameRef.current.innerText === clientNameEsp[clientNameEsp.length - 1]){
                 setTestiCont(testiContEsp[0]);
                 setclientName(clientNameEsp[0]);
                 setJobTitle(jobTitleEsp[0]);
@@ -90,15 +90,27 @@ function Testimonials(props) {
         nextSlideEffect();
     },[nextSlideEffect, testiState]);
 
+    useEffect(() => {
+        let timedNextSlide = setTimeout(() => {
+            nextSlideEffect();
+        }, 8500);
+        return () => {
+            clearTimeout(timedNextSlide);
+        }
+        
+    });
+
     return ( 
-        <div className = "testimonials" >
+        <div ref={ref} className = "testimonials" >
             <div className = "testi-layer" >
                 <h2>{testiState ? 'What our clients are saying' : 'Qué dicen nuestros clientes'}</h2> 
                 <div ref = { testiCard } className = "testi-text-wrapper">
                     {openQuotes()}
                     <p>{testiCont}</p>
-                    <span ref = {clientNameRef}>{clientName}</span>
-                    <span>{jobTitle}</span>
+                    <div className="testi-signature">
+                        <span ref = {clientNameRef}>{clientName}</span>
+                        <span>{jobTitle}</span>
+                    </div>
                 </div>
                 <div className = "arrow-container-prev" onClick = {prevSlideEffect}> 
                     {prevArrow()}
@@ -113,4 +125,4 @@ function Testimonials(props) {
     );
 }
 
-export { Testimonials as default };
+export default React.forwardRef(Testimonials);

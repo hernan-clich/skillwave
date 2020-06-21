@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import backToTopIcon from './Svgs';
 
-function Footer() {
+function Footer({heroRef}) {
+    const backTop = useRef(null);
+    
+    useEffect(() => {
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+           if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            //backTop.current.classList.remove('none');
+            backTop.current.classList.add('slide-in');
+           } else {
+              //backTop.current.classList.add('none');
+              backTop.current.classList.remove('slide-in');
+           }
+        }
+    }, []);
+
+    const handleTopClick = e => {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    
     return (
         <footer>
-            <div className="footer-logo">
-                <img src="logo-bg.png" alt="logo" />    
-            </div>
             <p>Copyright © <span >Skillwave</span> - By Hernan Clich</p>
-            <a className={`none`} href="#hero">{backToTopIcon()}</a>
+            <button ref={backTop} onClick={handleTopClick} aria-label="Back to top icon" aria-hidden="false">{backToTopIcon()}</button>
         </footer>
     );
 }

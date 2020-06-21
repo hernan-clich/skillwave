@@ -1,9 +1,19 @@
-footer a {
+footer button {
     position: fixed;
     bottom: 2em;
     right: 1em;
     background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    cursor: pointer;
     z-index: 3;
+    transform: translateX(500%);
+    transition: transform 1s ease;
+
+}
+
+footer button.slide-in {
+    transform: translateX(0%);
 }
 
 @media (hover: hover) {

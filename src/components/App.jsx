@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Card from './Card';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -12,14 +12,35 @@ import Testimonials from './Testimonials';
 import {contentText} from './Text';
 
 function App() {
-    const [englishLang, setLang] = useState(true);
+    const heroRef = useRef(null);
+    const aboutRef = useRef(null);
+    const servicesRef = useRef(null);
+    const testimonialsRef = useRef(null);
+    const contactRef = useRef(null);
+    const storedLang = localStorage.getItem("engLang");
+    const [englishLang, setLang] = useState(storedLang ? 
+        JSON.parse(localStorage.getItem("engLang")) : true);
+    //const changeLangFromChild = newStuff => setLang(newStuff);
+    useEffect(() => {
+        localStorage.setItem("engLang", JSON.stringify(englishLang));
+    }, [englishLang]);
 
     return (
-        <div className="bg">
+        <>
             <Header
-                linkOne={englishLang ? contentText.header.linkOneEng : contentText.header.linkOneEsp}
-                linkTwo={englishLang ? contentText.header.linkTwoEng : contentText.header.linkTwoEsp} 
+                linkOne={englishLang ? contentText.header.linkTwoEng : contentText.header.linkTwoEsp} 
+                linkTwo={englishLang ? contentText.header.linkOneEng : contentText.header.linkOneEsp}
                 linkThree={englishLang ? contentText.header.linkThreeEng : contentText.header.linkThreeEsp} 
+                linkFour={englishLang ? contentText.header.linkFourEng : contentText.header.linkFourEsp} 
+                setHeaderState={setLang}
+                headerState={englishLang}
+                ref={{
+                    heroRef,
+                    contactRef, 
+                    aboutRef,
+                    servicesRef,
+                    testimonialsRef
+                }}
             >
                 <LangPicker
                     clickEng={() => {setLang(true)}} 
@@ -28,8 +49,10 @@ function App() {
             </Header>
             <Hero 
                 subtitle={englishLang ? contentText.hero.subtitleEng : contentText.hero.subtitleEsp}
+                heroBtn={englishLang ? contentText.hero.heroBtnEng : contentText.hero.heroBtnEsp}
+                ref={heroRef}
             />
-            <div className="intro" id="about-us">
+            <div ref={aboutRef} className="intro" id="about-us">
                 <Tag label={englishLang ? contentText.tags.tagAboutEng : contentText.tags.tagAboutEsp}/>
                 <h2><span>Skillwave</span> {englishLang ? contentText.intro.introEng : contentText.intro.introEsp} </h2>
             </div>
@@ -49,27 +72,30 @@ function App() {
                     cardButton={englishLang ? contentText.cards.CandidButtonEng : contentText.cards.CandidButtonEsp}
                 />
             </div>
+            <div ref={servicesRef} className="serv-container">
+                <div className="serv-header" id="services">
+                    <h3>{englishLang ? contentText.services.servTitleEng : contentText.services.servTitleEsp}</h3>
+                </div>
+                <div className="serv-overlay">
+                    <Services 
+                        servTitle={englishLang ? contentText.services.serv1TitleEng : contentText.services.serv1TitleEsp} 
+                        servText={englishLang ? contentText.services.serv1TextEng : contentText.services.serv1TextEsp} 
+                    />
+                    <Services 
+                        servTitle={englishLang ? contentText.services.serv2TitleEng : contentText.services.serv2TitleEsp}  
+                        servText={englishLang ? contentText.services.serv2TextEng : contentText.services.serv2TextEsp} 
+                    />
+                </div>
+            </div>
             <ParalSeparator 
                 span1={englishLang ? contentText.separator.sepa1Eng : contentText.separator.sepa1Esp}
                 span2={englishLang ? contentText.separator.sepa2Eng : contentText.separator.sepa2Esp}
                 span3={englishLang ? contentText.separator.sepa3Eng : contentText.separator.sepa3Esp}
-                imgUrl="url(./man-jumps-from-to-water-1168742.jpg)"
+                imgUrl="url(./man-jumps-from-to-water-1168742.png)"
             />
-            <div className="serv-header" id="services">
-                <h3>{englishLang ? contentText.services.servTitleEng : contentText.services.servTitleEsp}</h3>
-            </div>
-            <div className="serv-container">
-                <Services 
-                    servTitle={englishLang ? contentText.services.serv1TitleEng : contentText.services.serv1TitleEsp} 
-                    servText={englishLang ? contentText.services.serv1TextEng : contentText.services.serv1TextEsp} 
-                />
-                <Services 
-                    servTitle={englishLang ? contentText.services.serv2TitleEng : contentText.services.serv2TitleEsp}  
-                    servText={englishLang ? contentText.services.serv2TextEng : contentText.services.serv2TextEsp} 
-                />
-            </div>
             <Testimonials 
                 testiState={englishLang}
+                ref={testimonialsRef}
             />
             <Contact
                 labelOne={englishLang ? contentText.contact.labelOneEng : contentText.contact.labelOneEsp} 
@@ -79,11 +105,12 @@ function App() {
                 errorName={englishLang ? contentText.contact.errorNameEng : contentText.contact.errorNameEsp} 
                 errorEmail={englishLang ? contentText.contact.errorEmailEng : contentText.contact.errorEmailEsp} 
                 errorMsg={englishLang ? contentText.contact.errorMsgEng : contentText.contact.errorMsgEsp} 
+                ref={contactRef}
             >
                 <Tag label={englishLang ? contentText.tags.tagContactEng : contentText.tags.tagContactEsp}/>
             </Contact>
-            <Footer />
-        </div>
+            <Footer/>
+        </>
     );
 }
 

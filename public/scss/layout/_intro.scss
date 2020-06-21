@@ -49,6 +49,21 @@
     }
 }
 
+@media(max-width: 580px) {
+    .intro {
+        height: 75vh;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        h2 span {
+            font-weight: bolder;
+            font-size: 1.6rem;
+        }
+    }
+}
+
 #about-us {
     scroll-margin-top: 4rem;
 }

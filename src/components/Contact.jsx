@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Modal from './Modal';
+import { personIcon, emailIcon, locationIcon, whatsappIcon } from './Svgs';
 
-function Contact(props) {
+function Contact(props, ref) {
     const [disableInput, setDisableInput] = useState(false);
     const [nameState, setNameState] = useState('');
     const [emailState, setEmailState] = useState('');
@@ -63,8 +64,8 @@ function Contact(props) {
     }
 
     return (
-        <div className="contact" id="contact">
-            {props.children}
+        <div ref={ref} className="contact" id="contact">
+            <div className="cont-form">
             <iframe 
                 title="hidden iframe" 
                 name="hidden_iframe" 
@@ -89,6 +90,7 @@ function Contact(props) {
                         id="full-name" 
                         name="entry.1186644385"
                         disabled={disableInput ? 'disabled' : ''}
+                        required
                     />
                     <p>{props.errorName}</p>
                 </div>
@@ -102,6 +104,7 @@ function Contact(props) {
                         id="email" 
                         name="emailAddress"
                         disabled={disableInput ? 'disabled' : ''}
+                        required
                     />
                     <p>{props.errorEmail}</p>
                 </div>
@@ -116,19 +119,53 @@ function Contact(props) {
                         cols="10" 
                         name="entry.676113856"
                         disabled={disableInput ? 'disabled' : ''}
+                        required
                     />
                     <p>{props.errorMsg}</p>
                 </div>
-                <button type="submit" disabled={disableInput ? 'disabled' : ''}>{props.btnText}</button>
+                <button 
+                    type="submit" 
+                    disabled={disableInput ? 'disabled' : ''}
+                >
+                    {props.btnText}
+                </button>
             </form>
             <Modal 
                 isActive={modalActive}
-                setNameState={setNameState}
-                setEmailState={setEmailState}
-                setMsgState={setMsgState}
+                setSubmitted={setSubmitted}
+                setModalActive={setModalActive}
             />
+            </div>
+            <div className="contact-card">
+                <h3>Contact info</h3>
+                <div className="contact-detail">
+                    <div className="contact-icon">
+                        {locationIcon()}
+                    </div>
+                    <p>Buenos Aires, Argentina</p>
+                </div>
+                <div className="contact-detail">
+                    <div className="contact-icon">
+                        {personIcon()}
+                    </div>
+                    <p>Florencia Fernandez</p>
+                </div>
+                <div className="contact-detail">
+                    <div className="contact-icon">
+                        {emailIcon()}
+                    </div>
+                    <p>florencia.fernandez@skillwave.com.ar</p>
+                </div>
+                <div className="contact-detail">
+                    <div className="contact-icon">
+                        {whatsappIcon()}
+                    </div>
+                    <p>+541157327188</p>
+                </div>
+            </div>
+            {props.children}
         </div>
     );
 }
 
-export default Contact;
+export default React.forwardRef(Contact);

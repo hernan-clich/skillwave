@@ -1,20 +1,27 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
-function Modal({isActive, setNameState, setEmailState, setMsgState}) {
+function Modal({isActive, setModalActive, setSubmitted}) {
     const modalRef = useRef(null);
     const modalOverlayRef = useRef(null);
 
-    (function openModal(){
+    // (function openModal(){
+    //     if(isActive){
+    //         modalRef.current.classList.add('modal-active');
+    //         modalOverlayRef.current.classList.add('modal-active');
+    //     }
+    // })()
+    useEffect(()=>{
         if(isActive){
             modalRef.current.classList.add('modal-active');
             modalOverlayRef.current.classList.add('modal-active');
         }
-    })()
+    }, [isActive]);
 
     const handleClick = () => {
         modalRef.current.classList.remove('modal-active');
         modalOverlayRef.current.classList.remove('modal-active');
-   
+        setModalActive(false);
+        setSubmitted(false);
     }
     
     return (

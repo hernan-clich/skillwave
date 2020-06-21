@@ -8,7 +8,7 @@
 
     h2 {
         color: rgba(0, 84, 144, 1);
-        font-size: 2.75vw;
+        font-size: 5.5vh;
     }
 }
 
@@ -33,8 +33,8 @@
         left: 10%;
         cursor: pointer;
 
-        &:hover>svg path {
-            fill: white;
+        svg path {
+            transition: fill ease 300ms;
         }
     }
 
@@ -44,8 +44,24 @@
         right: 10%;
         cursor: pointer;
 
-        &:hover>svg path {
-            fill: white;
+        svg path {
+            transition: fill ease 300ms;
+        }
+    }
+}
+
+@media (hover: hover) {
+    .testi-layer {
+        .arrow-container-prev {
+            &:hover>svg path {
+                fill: white;
+            }
+        }
+
+        .arrow-container-next {
+            &:hover>svg path {
+                fill: white;
+            }
         }
     }
 }
@@ -56,11 +72,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 55vh;
+    justify-content: center;
+    height: 60%;
     transition: transform 1s ease;
 
     p {
-        padding: 3em 2.5em 0;
+        padding: 0 2.5em;
         font-size: 1.1rem;
         font-style: oblique;
         color: rgba(98, 98, 98, 1);
@@ -71,24 +88,30 @@
         width: 4.7rem;
         height: 4rem;
         top: -2em;
-        left: 45%;
+        left: 50%;
+        transform: translateX(-50%);
 
         path {
             fill: rgba(0, 84, 144, 0.75);
         }
     }
 
-    span {
-        display: block;
-        padding: 0.5em;
-        font-size: 0.85rem;
-        // text-transform: uppercase;
+    .testi-signature {
 
-        &:nth-child(3) {
-            letter-spacing: 0.2rem;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 900;
-            color: rgb(49, 49, 49);
+        span {
+            display: block;
+            padding-bottom: .4em;
+            font-size: 1rem;
+            font-weight: 500;
+            // text-transform: uppercase;
+
+            &:nth-child(2) {
+                letter-spacing: 0.05rem;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 900;
+                color: rgb(49, 49, 49);
+                font-size: 0.9rem;
+            }
         }
     }
 }
@@ -100,17 +123,35 @@
 }
 
 @media(max-width: 880px) {
-    .testi-text-wrapper {
-        margin: 4em 10% 0;
-        p {
-            padding: 1em .5em 0;
-            font-size: 1rem;
+    .testimonials {
+        height: 105vh;
+
+        h2 {
+            font-size: 4.5vh;
         }
 
-        .open-quotes {
-            width: 3.9rem;
-            top: -2.25em;
-            left: 42%;
+        .testi-layer {
+            height: 105vh;
+
+            .arrow-container-prev {
+                opacity: 0;
+            }
+
+            .arrow-container-next {
+                opacity: 0;
+            }
+
+        }
+
+        .testi-text-wrapper {
+            margin: 4em 10% 0;
+            height: 70%;
+
+            p {
+                padding: .5em 2em;
+                font-size: 1rem;
+            }
+
         }
     }
 }

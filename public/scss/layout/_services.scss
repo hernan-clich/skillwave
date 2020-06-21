@@ -1,7 +1,12 @@
+.serv-container {
+    // background: url(/la-lic.jpeg) no-repeat center;
+    // background-size: cover;
+}
+
 .serv-header {
     //background-color: rgb(112, 184, 202);
-    background: rgb(124,200,219);
-    background: radial-gradient(circle, rgba(124,200,219,1) 0%, rgba(112,184,202,1) 50%, rgba(51,173,204,1) 100%);
+    //background: radial-gradient(circle, rgba(124, 200, 219, 0.9) 0%, rgba(112, 184, 202, 0.9) 50%, rgba(51, 173, 204, 0.9) 100%);
+    background: rgba(65, 146, 167, .8);
     min-height: 35vh;
     min-width: 100%;
     position: relative;
@@ -14,10 +19,11 @@
     }
 }
 
-.serv-container {
-    background-color: rgba(216, 216, 216, 0.5);
-    height: 60vh;
-    width: 100%;
+.serv-overlay {
+    height: 95vh;
+    max-width: 100%;
+    background: linear-gradient(180deg, rgba(65,146,167,0.8) 0%, rgba(190,190,190,0.8) 12%);
+    height: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -26,11 +32,12 @@
     .serv {
         padding: 0 3em;
         margin: 0 2em 3em;
-        background-color: $whiteSolid;
+        //background-color: $whiteSolid;
+        background-color: rgba(255,255,255,0.7);
         min-height: 330px;
         width: 30%;
         border-radius: 2.5%;
-        box-shadow: 0px 0px 17px -1px rgba(82,82,82,0.24);
+        box-shadow: 0px 0px 17px -1px rgba(82, 82, 82, 0.24);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -38,13 +45,11 @@
         flex-direction: column;
         transform: translateY(-10%) scale(1);
         transition: transform ease 350ms;
-        &:hover{
-            transform: translateY(-20%) scale(1.05);
-        }
         h2 {
             color: rgb(66, 66, 66);
             font-size: 1.6rem;
         }
+
         p {
             color: rgb(100, 100, 100);
             margin-top: 0.15em;
@@ -52,21 +57,103 @@
     }
 }
 
-@media(max-width: 870px){
-    .serv-container {
-        background-color: rgba(216, 216, 216, 0.781);
+// div.serv-overlay > div:nth-child(1), div.serv-overlay > div:nth-child(2) {
+//     position: relative;
+//     overflow: hidden;
+//     background-size: cover;
+//     z-index: 0;
+
+//     &::before{
+//         content: '';
+//         background-color: rgba(255, 255, 255, 0.75);
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         z-index: -1;
+//         transition: background-color 1s ease;
+//     }
+// }
+
+// div.serv-overlay > div:nth-child(1) {
+//     background: url(/la-lic.jpeg) no-repeat center;
+// }
+
+// div.serv-overlay > div:nth-child(2) {
+//     background: url(/conversa.jpeg) no-repeat center;
+// }
+
+@media(max-width: 870px) {
+    .serv-overlay {
         height: 130vh;
         flex-direction: column;
         flex-wrap: wrap;
+
         .serv {
-            margin: 0 2em 2em;
+            margin: 0 2em 3em;
             min-height: 330px;
             width: 65%;
             transform: translateY(0);
-            &:hover{
+
+            &:hover {
                 transform: translateY(0);
             }
 
+        }
+    }
+}
+
+
+@media(max-width: 450px) {
+    .serv-overlay {
+        height: 145vh;
+
+        .serv {
+            margin: 0 auto 2.5em;
+        }
+    }
+}
+
+
+@media(max-width: 350px) {
+    .serv-overlay {
+        height: 180vh;
+
+        .serv {
+            margin: 0 auto 2em;
+            width: 55vw;
+        }
+    }
+}
+
+@media(max-width: 450px) {
+    .serv-header {
+        h3 {
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-device-width : 768px) and (orientation : landscape) {
+    .serv-overlay {
+        height: 230vh;
+
+        .serv {
+            margin: 0 1em 2em;
+            width: 70vw;
+        }
+    }
+}
+
+@media (hover: hover) {
+    .serv-overlay .serv {
+        &:hover {
+            transform: translateY(-20%) scale(1.05);
+        }
+    }
+    div.serv-overlay > div:nth-child(1), div.serv-overlay > div:nth-child(2) {
+        &:hover::before{
+            background-color: rgba(255, 255, 255, 0.5);
         }
     }
 }
