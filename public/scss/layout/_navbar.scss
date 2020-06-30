@@ -1,4 +1,4 @@
-.navbar-desktop {
+.navbar-main {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -16,11 +16,8 @@
 
 .logo-img {
     margin-right: auto;
-    width: 12.25rem;
-    height: 2.75rem;
-    min-height: 8vh;
-    min-width: 35vh;
-    padding: 1vh 0 0 1vw;
+    width: 200px;
+    padding: 2vh 0 0 1vw;
     position: fixed;
     top: 0;
     left: 1rem;
@@ -67,7 +64,7 @@
             width: 0%;
             height: 10%;
             bottom: -30%;
-            left: 0%;
+            left: 5%;
             background-color: rgba(0, 82, 149, 0.99);
             transform-origin: center;
             z-index: -1;
@@ -146,5 +143,89 @@
 
     div.nav-icons > div.nav-icon-lang > svg path {
         fill: $whiteSolid;
+    }
+}
+
+// IPAD portrait
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .navbar-main {
+        height: 75px;
+
+    }
+}
+
+//IPAD landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .navbar-main {
+        height: 75px;
+
+    }
+}
+
+//IPAD Pro Portrait
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .logo-img {
+        padding: 15px;
+
+    }
+}
+
+// IPAD Pro Landscape
+@media only screen 
+    and (min-device-width: 1366px) 
+    and (max-device-width: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-main {
+        height: 6vh;
+
+    }
+    .logo-img {
+        padding: 10px;
+
+    }
+}
+
+//IPhone X Portrait
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .navbar-main {
+        height: 6vh;
+
+    }
+    .logo-img {
+        padding: 10px;
+
+    }
+}
+
+//IPhone X Landscape
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .navbar-main {
+        height: 6vh;
+
+    }
+    .logo-img {
+        padding: 10px;
+
     }
 }

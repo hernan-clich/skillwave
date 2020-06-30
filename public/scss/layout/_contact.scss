@@ -23,13 +23,15 @@
 
 .contact-card {
     background-color: rgba(59, 59, 59, 1);
+    padding: 1.5em;
+    padding-left: 0;
     min-width: 15rem;
     width: 21rem;
-    height: 60vh;
+    min-height: 300px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
     z-index: 1;
     overflow: hidden;
     transform: translateX(10%);
@@ -45,9 +47,28 @@
         align-self: center;
     }
 
-    p {
+    p,
+    a {
         font-size: 0.85rem;
         font-weight: 400;
+        text-decoration: none;
+        color: $whiteSolid;
+    }
+
+    a {
+        width: 90%;
+
+        &:hover {
+            color: rgb(176, 219, 255);
+        }
+
+        &:active {
+            color: rgb(86, 154, 211);
+        }
+
+        &:hover+div {
+            width: 300px;
+        }
     }
 
     .contact-detail {
@@ -99,8 +120,6 @@
 
     }
 
-
-
     .input-wrapper {
         margin-top: 1.5em;
         position: relative;
@@ -125,6 +144,7 @@
         font-size: 1rem;
         font-weight: 700;
         flex: 1 1 100%;
+        border: 1px solid rgb(85, 85, 85);
     }
 
     .text-wrapper {
@@ -150,6 +170,7 @@
             font-weight: 700;
             flex: 1 1 100%;
             font-family: $montserrat;
+            border: 1px solid rgb(85, 85, 85);
         }
     }
 
@@ -232,10 +253,11 @@ textarea.invalid+p {
     @include tags;
 }
 
-@media only screen and (max-width: 912px) {
+@media only screen and (max-width: 940px) {
 
     .contact {
-        height: 190vh;
+        min-height: 1000px;
+        height: auto;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
@@ -243,7 +265,16 @@ textarea.invalid+p {
 
     .contact-card {
         transform: translateX(0%);
-        margin: 1em;
+        margin: 10em 1em 3em;
+        padding: 0;
+        //margin-left: 0;
+        //min-width: 70%;
+        max-width: 400px;
+        width: 90%;
+        z-index: 0;
+        .contact-detail {
+            margin: 0 0 0 3em;
+        }
     }
 
     .cont-form .input-wrapper,
@@ -252,17 +283,19 @@ textarea.invalid+p {
     }
 
     .cont-form {
-        margin: 0;
+        margin: 1em;
         transform: translateX(0%);
+
         &::before {
-            top: 10%;
-            left: 0;
-            height: 90%;
-            width: 100%;
+            top: 0;
+            left: 2.5%;
+            height: 100%;
+            width: 95%;
         }
+
         form {
-            margin-top: 2em;
-            width: 21rem;
+            margin: 2em 10% 0;
+            width: auto;
 
         }
     }

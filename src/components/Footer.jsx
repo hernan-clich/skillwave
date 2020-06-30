@@ -25,7 +25,11 @@ function Footer({heroRef}) {
     
     return (
         <footer>
-            <p>Copyright © <span >Skillwave</span> - By Hernan Clich</p>
+            <p>Copyright © <span >Skillwave</span> - By <a
+                href="https://github.com/hernan-clich"
+                target="_blank" 
+                rel="external noreferrer noopener nofollow"
+            >Hernan Clich</a></p>
             <button ref={backTop} onClick={handleTopClick} aria-label="Back to top icon" aria-hidden="false">{backToTopIcon()}</button>
         </footer>
     );

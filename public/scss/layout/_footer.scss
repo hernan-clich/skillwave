@@ -8,6 +8,17 @@ footer {
     background-color: rgb(0, 0, 0);
     color: $whiteSolid;
 
+    a {
+        display: inline;
+        text-decoration: none;
+        color: $whiteSolid;
+        cursor: pointer;
+        transition: color 300ms ease;
+        &:hover{
+            color: rgba(0, 255, 255, 0.76);
+        }
+    }
+    
     p {
         margin: 1.5em 0;
         font-size: 0.9rem;

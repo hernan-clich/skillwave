@@ -93,7 +93,7 @@ function Testimonials(props, ref) {
     useEffect(() => {
         let timedNextSlide = setTimeout(() => {
             nextSlideEffect();
-        }, 8500);
+        }, 15000);
         return () => {
             clearTimeout(timedNextSlide);
         }
@@ -103,7 +103,7 @@ function Testimonials(props, ref) {
     return ( 
         <div ref={ref} className = "testimonials" >
             <div className = "testi-layer" >
-                <h2>{testiState ? 'What our clients are saying' : 'Qué dicen nuestros clientes'}</h2> 
+                <h2>{testiState ? 'What our clients are saying' : 'Qué dicen nuestros clientes'}</h2>
                 <div ref = { testiCard } className = "testi-text-wrapper">
                     {openQuotes()}
                     <p>{testiCont}</p>

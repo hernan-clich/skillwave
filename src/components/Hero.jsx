@@ -28,11 +28,15 @@ function Hero(props, ref) {
         }
     }, [ref]);
 
+    const handleHeroBtnClick = () => {
+        window.scrollTo({top: props.contRef.current.offsetTop - 50, behavior: 'smooth'});
+    }
+
     return (
             <div ref={ref} className="hero" id="hero">
                 <h1 className="fade-up">DIGITAL SKILLS</h1>
                 <p className="fade-up">{props.subtitle}</p>
-                <button className="fade-up">{props.heroBtn}</button>
+                <button className="fade-up" onClick={handleHeroBtnClick}>{props.heroBtn}</button>
                 <video className="hero-bg" autoPlay muted loop>
                 <source src="/video.mp4" type="video/mp4"/>
                 </video>

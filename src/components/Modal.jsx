@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-function Modal({isActive, setModalActive, setSubmitted}) {
+function Modal({isActive, setModalActive, setSubmitted, modalTitle, modalText, modalBtn}) {
     const modalRef = useRef(null);
     const modalOverlayRef = useRef(null);
 
@@ -28,9 +28,9 @@ function Modal({isActive, setModalActive, setSubmitted}) {
         <>
             <div className="modal" ref={modalRef}>
                 <div className="modal-content">
-                    <h3>Form submitted</h3>
-                    <p>We'll contact you ASAP</p>
-                    <button onClick={handleClick}>Return to page</button>
+                    <h2>{modalTitle}</h2>
+                    <p>{modalText}</p>
+                    <button onClick={handleClick}>{modalBtn}</button>
                 </div>
             </div>
             <div className="modal-overlay" ref={modalOverlayRef}></div>

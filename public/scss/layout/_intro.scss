@@ -64,6 +64,60 @@
     }
 }
 
+// IPAD Portrait
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .intro {
+        height: 40vh;
+
+    }
+}
+
+//IPAD Portrait
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .intro {
+        height: 30vh;
+
+    }
+    .cards-wrapper {
+        min-height: 40vh;
+    }
+}
+
+// IPAD Pro Landscape
+@media only screen 
+    and (min-device-width: 1366px) 
+    and (max-device-width: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .intro {
+            height: 40vh;
+    
+        }
+        .card-container {
+            min-height: 30vh;
+        }
+}
+
+//IPhone X Landscape
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .intro {
+        height: 100vh;
+
+    }
+}
+
 #about-us {
     scroll-margin-top: 4rem;
 }

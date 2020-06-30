@@ -4,8 +4,9 @@
 }
 
 @mixin tags {
-    width: 200px;
+    width: auto;
     height: 50px;
+    padding: 0 0.5em;
     background-color: $blackSolid;
     color: $whiteSolid;
     font-weight: bolder;

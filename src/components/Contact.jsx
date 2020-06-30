@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Modal from './Modal';
-import { personIcon, emailIcon, locationIcon, whatsappIcon } from './Svgs';
+import { linkedIcon, emailIcon, locationIcon, whatsappIcon } from './Svgs';
 
 function Contact(props, ref) {
     const [disableInput, setDisableInput] = useState(false);
@@ -64,107 +64,124 @@ function Contact(props, ref) {
     }
 
     return (
-        <div ref={ref} className="contact" id="contact">
-            <div className="cont-form">
-            <iframe 
-                title="hidden iframe" 
-                name="hidden_iframe" 
-                id="hidden_iframe" 
-                style={{display:"none"}} 
-                onLoad={handleOnLoad}
-            />
-            <form 
-                onSubmit={handleSubmission}
-                ref={formRef}
-                autoComplete="off" 
-                target="hidden_iframe" 
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc7vcTkZ3Nw6yJr927RMdNCD7wfxjMTge3f4KOSewj9YV2iOg/formResponse"
-            >
-                <div className="input-wrapper">
-                    <label htmlFor="full-name">{props.labelOne}</label>
-                    <input 
-                        onChange={nameChecker} 
-                        value={nameState} 
-                        ref={fullnameRef} 
-                        type="text" 
-                        id="full-name" 
-                        name="entry.1186644385"
-                        disabled={disableInput ? 'disabled' : ''}
-                        required
-                    />
-                    <p>{props.errorName}</p>
-                </div>
-                <div className="input-wrapper">
-                    <label htmlFor="email">{props.labelTwo}</label>
-                    <input 
-                        onChange={emailChecker} 
-                        value={emailState}
-                        ref={emailRef}
-                        type="email" 
-                        id="email" 
-                        name="emailAddress"
-                        disabled={disableInput ? 'disabled' : ''}
-                        required
-                    />
-                    <p>{props.errorEmail}</p>
-                </div>
-                <div className="text-wrapper">
-                    <label htmlFor="message">{props.labelThree}</label>
-                    <textarea 
-                        onChange={messageChecker}
-                        value={msgState}
-                        ref={msgRef}
-                        id="message" 
-                        rows="3" 
-                        cols="10" 
-                        name="entry.676113856"
-                        disabled={disableInput ? 'disabled' : ''}
-                        required
-                    />
-                    <p>{props.errorMsg}</p>
-                </div>
-                <button 
-                    type="submit" 
-                    disabled={disableInput ? 'disabled' : ''}
+        <>
+            <div ref={ref} className="contact" id="contact">
+                <div className="cont-form">
+                <iframe 
+                    title="hidden iframe" 
+                    name="hidden_iframe" 
+                    id="hidden_iframe" 
+                    style={{display:"none"}} 
+                    onLoad={handleOnLoad}
+                />
+                <form 
+                    onSubmit={handleSubmission}
+                    ref={formRef}
+                    autoComplete="off" 
+                    target="hidden_iframe" 
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc7vcTkZ3Nw6yJr927RMdNCD7wfxjMTge3f4KOSewj9YV2iOg/formResponse"
                 >
-                    {props.btnText}
-                </button>
-            </form>
+                    <div className="input-wrapper">
+                        <label htmlFor="full-name">{props.labelOne}</label>
+                        <input 
+                            onChange={nameChecker} 
+                            value={nameState} 
+                            ref={fullnameRef} 
+                            type="text" 
+                            id="full-name" 
+                            name="entry.1186644385"
+                            disabled={disableInput ? 'disabled' : ''}
+                            required
+                        />
+                        <p>{props.errorName}</p>
+                    </div>
+                    <div className="input-wrapper">
+                        <label htmlFor="email">{props.labelTwo}</label>
+                        <input 
+                            onChange={emailChecker} 
+                            value={emailState}
+                            ref={emailRef}
+                            type="email" 
+                            id="email" 
+                            name="emailAddress"
+                            disabled={disableInput ? 'disabled' : ''}
+                            required
+                        />
+                        <p>{props.errorEmail}</p>
+                    </div>
+                    <div className="text-wrapper">
+                        <label htmlFor="message">{props.labelThree}</label>
+                        <textarea 
+                            onChange={messageChecker}
+                            value={msgState}
+                            ref={msgRef}
+                            id="message" 
+                            rows="3" 
+                            cols="10" 
+                            name="entry.676113856"
+                            disabled={disableInput ? 'disabled' : ''}
+                            required
+                        />
+                        <p>{props.errorMsg}</p>
+                    </div>
+                    <button 
+                        type="submit" 
+                        disabled={disableInput ? 'disabled' : ''}
+                    >
+                        {props.btnText}
+                    </button>
+                </form>
+                </div>
+                <div className="contact-card">
+                    <h3>{props.contCardHeader}</h3>
+                    <div className="contact-detail">
+                        <div className="contact-icon">
+                            {locationIcon()}
+                        </div>
+                        <p>Buenos Aires, Argentina</p>
+                    </div>
+                    <div className="contact-detail">
+                        <div className="contact-icon">
+                            {linkedIcon()}
+                        </div>
+                        <p><a
+                            href="https://www.linkedin.com/in/florencia-c-fernandez/"
+                            target="_blank" 
+                            rel="external noreferrer noopener nofollow"
+                        >Florencia Fernandez</a></p>
+                    </div>
+                    <div className="contact-detail">
+                        <div className="contact-icon">
+                            {emailIcon()}
+                        </div>
+                        <p><a 
+                            href="mailto:florencia.fernandez@skillwave.com.ar"
+                            target="_blank" 
+                            rel="external noreferrer noopener nofollow"
+                        >florencia.fernandez@skillwave.com.ar</a></p>
+                    </div>
+                    <div className="contact-detail">
+                        <div className="contact-icon">
+                            {whatsappIcon()}
+                        </div>
+                        <p><a 
+                            href="https://wa.me/5491157327188" 
+                            target="_blank" 
+                            rel="external noreferrer noopener nofollow"
+                        >+541157327188</a></p>
+                    </div>
+                </div>
+                {props.children}
+            </div>
             <Modal 
                 isActive={modalActive}
                 setSubmitted={setSubmitted}
                 setModalActive={setModalActive}
+                modalTitle={props.modalTitle}
+                modalText={props.modalText}
+                modalBtn={props.modalBtn}
             />
-            </div>
-            <div className="contact-card">
-                <h3>Contact info</h3>
-                <div className="contact-detail">
-                    <div className="contact-icon">
-                        {locationIcon()}
-                    </div>
-                    <p>Buenos Aires, Argentina</p>
-                </div>
-                <div className="contact-detail">
-                    <div className="contact-icon">
-                        {personIcon()}
-                    </div>
-                    <p>Florencia Fernandez</p>
-                </div>
-                <div className="contact-detail">
-                    <div className="contact-icon">
-                        {emailIcon()}
-                    </div>
-                    <p>florencia.fernandez@skillwave.com.ar</p>
-                </div>
-                <div className="contact-detail">
-                    <div className="contact-icon">
-                        {whatsappIcon()}
-                    </div>
-                    <p>+541157327188</p>
-                </div>
-            </div>
-            {props.children}
-        </div>
+        </>
     );
 }
 

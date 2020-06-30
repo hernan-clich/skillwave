@@ -51,6 +51,7 @@ function App() {
                 subtitle={englishLang ? contentText.hero.subtitleEng : contentText.hero.subtitleEsp}
                 heroBtn={englishLang ? contentText.hero.heroBtnEng : contentText.hero.heroBtnEsp}
                 ref={heroRef}
+                contRef={contactRef}
             />
             <div ref={aboutRef} className="intro" id="about-us">
                 <Tag label={englishLang ? contentText.tags.tagAboutEng : contentText.tags.tagAboutEsp}/>
@@ -80,10 +81,12 @@ function App() {
                     <Services 
                         servTitle={englishLang ? contentText.services.serv1TitleEng : contentText.services.serv1TitleEsp} 
                         servText={englishLang ? contentText.services.serv1TextEng : contentText.services.serv1TextEsp} 
+                        imgServSrc={"/la-lic.png"}
                     />
                     <Services 
                         servTitle={englishLang ? contentText.services.serv2TitleEng : contentText.services.serv2TitleEsp}  
                         servText={englishLang ? contentText.services.serv2TextEng : contentText.services.serv2TextEsp} 
+                        imgServSrc={"/conversa.png"}
                     />
                 </div>
             </div>
@@ -105,6 +108,10 @@ function App() {
                 errorName={englishLang ? contentText.contact.errorNameEng : contentText.contact.errorNameEsp} 
                 errorEmail={englishLang ? contentText.contact.errorEmailEng : contentText.contact.errorEmailEsp} 
                 errorMsg={englishLang ? contentText.contact.errorMsgEng : contentText.contact.errorMsgEsp} 
+                contCardHeader={englishLang ? contentText.contact.contCardHeaderEng : contentText.contact.contCardHeaderEsp} 
+                modalTitle={englishLang ? contentText.contact.modalTitleEng : contentText.contact.modalTitleEsp} 
+                modalText={englishLang ? contentText.contact.modalTextEng : contentText.contact.modalTextEsp} 
+                modalBtn={englishLang ? contentText.contact.modalBtnEng : contentText.contact.modalBtnEsp} 
                 ref={contactRef}
             >
                 <Tag label={englishLang ? contentText.tags.tagContactEng : contentText.tags.tagContactEsp}/>

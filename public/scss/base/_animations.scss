@@ -8,26 +8,37 @@
 
     100% {
         height: 10%;
-        width: 100%;
+        width: 90%;
     }
 }
 
-// To open and close sidebar menu
-
-@keyframes open-menu {
-    0% {
-        transform: translateX(100%);
-        background-color: $whiteTransp;
-    }
-
-    100% {
-        transform: translateX(0%);
-        background-color: $whiteSolid;
-    }
-}
+// To rotate the back to top button
 
 @keyframes rotate-arrow {
     to {
         transform: rotate(360deg);
+    }
+}
+
+// To go to the previous and next testimonial slides
+
+@keyframes flipper {
+    10% {
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateX(-100%) rotateY(-90deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(100%) rotateY(90deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%) rotateY(0deg);
+        opacity: 1;
     }
 }

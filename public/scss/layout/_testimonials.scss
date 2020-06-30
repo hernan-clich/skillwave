@@ -1,5 +1,6 @@
 .testimonials {
-    height: 95vh;
+    min-height: 105vh;
+    height: auto;
     width: 100%;
     background: url(/white-smartphone.png) no-repeat center;
     background-size: cover;
@@ -8,16 +9,20 @@
 
     h2 {
         color: rgba(0, 84, 144, 1);
-        font-size: 5.5vh;
+        font-size: 6.5vh;
     }
 }
 
 .testi-layer {
-    height: 95vh;
-    width: 100%;
+    min-height: 105vh;
+    height: auto;
+    min-width: 100%;
     background-color: rgba(98, 179, 224, 0.75);
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .arrow {
         width: 1.9rem;
@@ -68,12 +73,14 @@
 
 .testi-text-wrapper {
     background-color: rgba(225, 241, 255, 0.58);
-    margin: 4em 20% 0;
+    margin: 4em 20% 4em;
+    padding: 3em 0;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60%;
+    min-height: 60%;
+    height: auto;
     transition: transform 1s ease;
 
     p {
@@ -124,14 +131,16 @@
 
 @media(max-width: 880px) {
     .testimonials {
-        height: 105vh;
+        min-height: 115vh;
+        height: auto;
 
         h2 {
-            font-size: 4.5vh;
+            font-size: 2rem;
         }
 
         .testi-layer {
-            height: 105vh;
+            min-height: 115vh;
+            height: auto;
 
             .arrow-container-prev {
                 opacity: 0;
@@ -144,7 +153,8 @@
         }
 
         .testi-text-wrapper {
-            margin: 4em 10% 0;
+            margin: 4em 10% 4em;
+            padding: 2em 0;
             height: 70%;
 
             p {
@@ -156,6 +166,103 @@
     }
 }
 
+@media(max-width: 400px) {
+    .testimonials {
+        min-height: 1005px;
+
+        .testi-layer {
+            min-height: 1005px;
+        }
+    }
+}
+
+// IPAD Portrait
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .testimonials {
+        min-height: 70vh;
+
+        .testi-layer {
+            min-height: 70vh;
+        }
+    }
+}
+
+// IPAD Landscape
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .testi-layer .arrow-container-prev, 
+    .testi-layer .arrow-container-next {
+        top: 47.5%;
+    }
+}
+
+// IPAD Pro Portrait
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .testi-layer .arrow-container-prev, 
+    .testi-layer .arrow-container-next {
+        top: 55%;
+    }
+    .testimonials h2 {
+        font-size: 65px;
+    }
+
+    .testimonials, .testimonials .testi-layer {
+        min-height: 55vh;
+    }
+}
+
+// IPAD Pro Landscape
+@media only screen 
+    and (min-device-width: 1366px) 
+    and (max-device-width: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+    .testi-layer .arrow-container-prev, 
+    .testi-layer .arrow-container-next {
+        top: 55%;
+    }
+    .testimonials h2 {
+        font-size: 65px;
+    }
+
+    .testimonials, .testimonials .testi-layer {
+        min-height: 70vh;
+    }
+}
+
+//IPhone X Portrait
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+    .testimonials, .testimonials .testi-layer {
+        min-height: 880px;
+    }
+}
+
+//IPhone X Landscape
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    .testimonials, .testimonials .testi-layer {
+        min-height: 160vh;
+    }
+}
+
 .prev-testimonial {
     animation: flipper 800ms 1 reverse ease forwards;
 }
@@ -164,23 +271,3 @@
     animation: flipper 800ms 1 normal ease forwards;
 }
 
-@keyframes flipper {
-    10% {
-        opacity: 0.25;
-    }
-
-    50% {
-        transform: translateX(-100%) rotateY(-90deg);
-        opacity: 0;
-    }
-
-    60% {
-        transform: translateX(100%) rotateY(90deg);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0%) rotateY(0deg);
-        opacity: 1;
-    }
-}

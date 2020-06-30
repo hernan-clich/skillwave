@@ -28,13 +28,13 @@ export const contentText = {
     cards: {
         ClientTitleEng: "Is your company in full growth mode?",
         ClientTitleEsp: "¿Tu compañía está en pleno crecimiento?",
-        ClientTextEng: "With us you will have the opportunity to meet professionals from the world of technology with the highest quality standards.",
+        ClientTextEng: "With us you will have the opportunity to meet the highest skilled technology professionals. We offer a unique service: each opening you share with us will be our priority, we'll promote it and map the entire market to find the most talented professionals so you can meet your perfect match.",
         ClientTextEsp: "Con nosotros tendrás la posibilidad de conocer a profesionales del mundo de la tecnología con los más altos estándares de calidad. Ofrecemos un servicio único: cada búsqueda que nos compartas será la prioridad, vamos a difundirla y mapear el mercado de pies a cabeza para conocer talentos y así, presentarte a esas personas que hacen el match perfecto.",
         ClientButtonEng: "I'm a company",
         ClientButtonEsp: "Soy una empresa",
         CandidTitleEng: "Are you open to new possibilities?",
         CandidTitleEsp: "¿Estas abierto a nuevas posibilidades?",
-        CandidTextEng: "With us you will enhance your career with the best opportunities, discover new projects and receive career coaching.",
+        CandidTextEng: "With us you will enhance your career with the best opportunities, discover new projects and receive career coaching. In this world of digital transformation, we believe it's super valuable to meet each other and have a chat, so we can present you with new and exciting challenges according to your professional motivation.",
         CandidTextEsp: "Con nosotros potenciaras tu carrera con las mejores oportunidades, descubriras nuevos proyectos y recibiras coaching de carrera. En este mundo de transformación digital, nos parece super enriquecedor conocerte a traves de una charla, para poder asesorarte en tu búsqueda y presentarte nuevos desafíos según tu motivación profesional.",
         CandidButtonEng: "I'm a professional",
         CandidButtonEsp: "Soy un profesional"
@@ -52,12 +52,12 @@ export const contentText = {
         servTitleEsp: "¿Qué ofrecemos?",
         serv1TitleEng: "Talent Search",
         serv1TitleEsp: "Talent Search",
-        serv1TextEng: "We connect talented people with new challenging projects. We focus on meeting professionals every day. Our goal is to accompany and help people to CHOOSE their next challenge.",
-        serv1TextEsp: "Conectamos personas talentosas con nuevos proyectos desafiantes. Nos enfocamos en conocer profesionales día a día. Nuestro objetivo es acompañar y ayudar a las personas a ELEGIR su próximo desafío.",
+        serv1TextEng: "We constantly meet professionals from the TECH world: Full Stack Developers - Backend (Node.js, Java, NET Core) - Frontend (ReactJS, Angular). And more!",
+        serv1TextEsp: "Conocemos profesionales del mundo TECH constantemente: Desarrolladores Full Stack – Backend (Node.js, Java, NET Core) – Frontend (ReactJS, Angular). Y más!",
         serv2TitleEng: "Professional Coaching",
         serv2TitleEsp: "Coaching Laboral",        
-        serv2TextEng: "We provide assistance to achieve results, accompanying each stage of professional life. We assist in the development of soft skills: leadership, teamwork, listening and effective communication.",
-        serv2TextEsp: "Brindamos asistencia para el logro de resultados, acompañando cada etapa de la vida profesional. Asistimos para el desarrollo de soft skills: liderazgo, trabajo en equipo, escucha y comunicación efectiva."
+        serv2TextEng: "We believe that soft skills are also important in your professional development, that's why we'll assist you in: Leadership, teamwork, listening and effective communication.",
+        serv2TextEsp: "Creemos que las soft skills también son importantes en tu desarrollo profesional, por eso te asistimos en: Liderazgo, Trabajo en equipo, Escucha y Comunicación efectiva."
     },
     contact: {
         labelOneEng: "Full Name:",
@@ -73,7 +73,15 @@ export const contentText = {
         errorEmailEng: "Please, write a valid adress, e.g: john@mydomain.com",
         errorEmailEsp: "Por favor, ingresar una dirección de email válida, ej: juan@midominio.com",
         errorMsgEng: "Please, write a message",
-        errorMsgEsp: "Por favor, ingresar un mensaje"
+        errorMsgEsp: "Por favor, ingresar un mensaje",
+        contCardHeaderEng: "Contact Info",
+        contCardHeaderEsp: "Info de Contacto",
+        modalTitleEng: "Form submitted",
+        modalTitleEsp: "Formulario enviado",
+        modalTextEng: "We'll reach out to you soon, thank you for your message!",
+        modalTextEsp: "Nos comunicaremos a la brevedad, muchas gracias por tu mensaje!",
+        modalBtnEng: "Return to page",
+        modalBtnEsp: "Volver a la pagina"
     }
 };
 
