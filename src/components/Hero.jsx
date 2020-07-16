@@ -38,7 +38,7 @@ function Hero(props, ref) {
                 <p className="fade-up">{props.subtitle}</p>
                 <button className="fade-up" onClick={handleHeroBtnClick}>{props.heroBtn}</button>
                 <video className="hero-bg" autoPlay muted loop>
-                <source src="/video.mp4" type="video/mp4"/>
+                <source src="./assets/video.mp4" type="video/mp4"/>
                 </video>
             </div>
     );

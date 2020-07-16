@@ -23,11 +23,10 @@ function Header(props, ref) {
             entries.forEach(entry => {
                 if(!entry.isIntersecting){
                     navBar.current.classList.add('secondary');
-                    logoImg.current.setAttribute("src", "/logo-hor-inv.svg");
+                    logoImg.current.setAttribute("src", "./assets/logo-hor-inv.svg");
                 } else if (entry.isIntersecting && entry.target.classList.contains('hero')) {
                     navBar.current.classList.remove('secondary');
-                    // logoImg.current.setAttribute("src", "/logo-hor.png");
-                    logoImg.current.setAttribute("src", "/logo-hor.svg");
+                    logoImg.current.setAttribute("src", "./assets/logo-hor.svg");
                 }
             });
         }, heroOptions);
@@ -98,8 +97,7 @@ function Header(props, ref) {
     return (
         <div id="nav-desktop">
             <header ref={navBar} className="navbar-main">
-                <img ref={logoImg} className="logo-img" src="/logo-hor.svg" alt="logo"/>
-                {/* <img ref={logoImg} className="logo-img" src="/logo-hor-inv.png" alt="logo"/> */}
+                <img ref={logoImg} className="logo-img" src="./assets/logo-hor.svg" alt="logo"/>
                 <div className="navbar-mobile">
                 <input 
                     type="checkbox" 

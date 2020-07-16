@@ -23,6 +23,7 @@
         color: rgba(255, 255, 255, 0.65);
         font-weight: 1000;
         font-size: 10vw;
+        white-space: nowrap;
     }
 }
 
@@ -37,7 +38,7 @@
 @media(max-width: 768px) {
     .paral-img {
         span {
-            font-size: 18vw;
+            font-size: 14vw;
         }
     }
 }

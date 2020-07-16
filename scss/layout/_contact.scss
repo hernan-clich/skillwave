@@ -8,7 +8,7 @@
     align-items: center;
 
     &::before {
-        background: url(/abstract-painting-1546249.jpg) center;
+        background: url(./assets/abstract-painting-1546249.jpg) center;
         background-size: 200%;
         content: '';
         position: absolute;
@@ -144,7 +144,7 @@
         font-size: 1rem;
         font-weight: 700;
         flex: 1 1 100%;
-        border: 1px solid rgb(85, 85, 85);
+        //border: 1px solid rgb(85, 85, 85);
     }
 
     .text-wrapper {
@@ -170,7 +170,7 @@
             font-weight: 700;
             flex: 1 1 100%;
             font-family: $montserrat;
-            border: 1px solid rgb(85, 85, 85);
+            //border: 1px solid rgb(85, 85, 85);
         }
     }
 

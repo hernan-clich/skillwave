@@ -37,6 +37,11 @@
         opacity: 0;
     }
 
+    75% {
+        transform: translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+
     100% {
         transform: translateX(0%) rotateY(0deg);
         opacity: 1;

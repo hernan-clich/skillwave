@@ -59,14 +59,14 @@ function App() {
             </div>
             <div className="cards-wrapper">
                 <Card 
-                    iconUrl="/web-icons-company.png"
+                    iconUrl="./assets/web-icons-company.png"
                     typeOfCard="clients"
                     cardTitle={englishLang ? contentText.cards.ClientTitleEng : contentText.cards.ClientTitleEsp} 
                     cardText={englishLang ? contentText.cards.ClientTextEng : contentText.cards.ClientTextEsp}
                     cardButton={englishLang ? contentText.cards.ClientButtonEng : contentText.cards.ClientButtonEsp}
                 />
                 <Card 
-                    iconUrl="/web-icons-candidate.png"
+                    iconUrl="./assets/web-icons-candidate.png"
                     typeOfCard="candidates"
                     cardTitle={englishLang ? contentText.cards.CandidTitleEng : contentText.cards.CandidTitleEsp} 
                     cardText={englishLang ? contentText.cards.CandidTextEng : contentText.cards.CandidTextEsp}
@@ -81,12 +81,12 @@ function App() {
                     <Services 
                         servTitle={englishLang ? contentText.services.serv1TitleEng : contentText.services.serv1TitleEsp} 
                         servText={englishLang ? contentText.services.serv1TextEng : contentText.services.serv1TextEsp} 
-                        imgServSrc={"/la-lic.png"}
+                        imgServSrc={"./assets/our-dev.png"}
                     />
                     <Services 
                         servTitle={englishLang ? contentText.services.serv2TitleEng : contentText.services.serv2TitleEsp}  
                         servText={englishLang ? contentText.services.serv2TextEng : contentText.services.serv2TextEsp} 
-                        imgServSrc={"/conversa.png"}
+                        imgServSrc={"./assets/la-lic.png"}
                     />
                 </div>
             </div>
@@ -94,7 +94,7 @@ function App() {
                 span1={englishLang ? contentText.separator.sepa1Eng : contentText.separator.sepa1Esp}
                 span2={englishLang ? contentText.separator.sepa2Eng : contentText.separator.sepa2Esp}
                 span3={englishLang ? contentText.separator.sepa3Eng : contentText.separator.sepa3Esp}
-                imgUrl="url(./man-jumps-from-to-water-1168742.png)"
+                imgUrl="url(./assets/man-jumps-from-to-water-1168742.png)"
             />
             <Testimonials 
                 testiState={englishLang}

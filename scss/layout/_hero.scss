@@ -3,7 +3,7 @@
     //background-color: rgba(74, 0, 192, 0.4);
     //background-color: rgba(32, 167, 230, 1);
     // background-color: rgba(0, 255, 255, 0.8);
-    background: rgba(12, 103, 131, 0.7) url(/video-pattern.png) repeat;
+    background: rgba(12, 103, 131, 0.7) url(./assets/video-pattern.png) repeat;
     min-height: 100vh;
     min-width: 100%;
     position: relative;
@@ -46,7 +46,8 @@
         min-width: 220px;
         width: 20vw;
         //background-color: rgb(113, 49, 133,.8);
-        background-color: rgba(231, 112, 0, 0.9);
+        //background-color: rgba(231, 112, 0, 0.9);
+        background-color: #0092D0;
         color: $whiteSolid;
         border: 2px $whiteSolid solid;
         border-radius: 5px;

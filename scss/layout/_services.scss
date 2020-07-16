@@ -40,48 +40,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        box-shadow: -10px -10px 0px 0px rgba(53, 53, 53, 0.3);
         transform: translateY(-10%) scale(1);
         transition: transform ease 350ms;
-        transform-style: preserve-3d;
-
-        &::before {
-            content: "";
-            position: absolute;
-            display: inline-block;
-            top: 10px;
-            left: -10px;
-            background-color: rgba(53, 53, 53, 0.3);
-            height: 100%;
-            width: 100%;
-            border-radius: 5px;
-            z-index: -1;
-            transform: translateZ(-1px);
-        }
 
         .serv1 {
             width: 100%;
-            //padding: 0 6em;
         }
 
-        // .serv-img {
-        //     overflow: hidden;
-        //     max-height: 100%;
-        //     max-width: 100%;
-        //     width: auto;
-        //     height: auto;
-        //     //background: rgba(12, 103, 131, 0.7) url(/la-lic.jpeg) no-repeat center;
-        //     background: rgba(56, 56, 56, 0.6) center;
-        //     border-radius: 5px 5px 0px 0px;
-        //     img {
-        //         border-radius: 5px 5px 0px 0px;
-        //         max-height: 100%;
-        //         max-width: 100%;
-        //         width: auto;
-        //         height: auto;
-        //         position: relative;
-        //         z-index: -1;
-        //     }
-        // }
         img {
             border-radius: 5px 5px 0px 0px;
             max-height: 100%;
@@ -89,6 +55,7 @@
             width: auto;
             height: auto;
             position: relative;
+            transform: translateY(-1px);
         }
 
         h2 {
@@ -213,10 +180,10 @@
     }
 }
 
-@media (hover: hover) {
-    .serv-overlay .serv {
-        &:hover {
-            transform: translateY(-20%) scale(1.05);
-        }
-    }
-}
+// @media (hover: hover) {
+//     .serv-overlay .serv {
+//         &:hover {
+//             transform: translateY(-20%) scale(1.05);
+//         }
+//     }
+// }

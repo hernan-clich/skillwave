@@ -21,6 +21,9 @@
   60% {
     transform: translateX(100%) rotateY(90deg);
     opacity: 0; }
+  75% {
+    transform: translateX(0%) rotateY(0deg);
+    opacity: 1; }
   100% {
     transform: translateX(0%) rotateY(0deg);
     opacity: 1; } }
@@ -407,7 +410,8 @@ footer button.slide-in {
   .paral-img span {
     color: rgba(255, 255, 255, 0.65);
     font-weight: 1000;
-    font-size: 10vw; }
+    font-size: 10vw;
+    white-space: nowrap; }
 
 @media (max-width: 880px) {
   .paral-img span {
@@ -415,7 +419,7 @@ footer button.slide-in {
 
 @media (max-width: 768px) {
   .paral-img span {
-    font-size: 18vw; } }
+    font-size: 14vw; } }
 
 @media (min-width: 1400px) {
   .paral-img span {
@@ -457,7 +461,7 @@ footer button.slide-in {
   justify-content: center;
   align-items: center; }
   .contact::before {
-    background: url(/abstract-painting-1546249.jpg) center;
+    background: url(./assets/abstract-painting-1546249.jpg) center;
     background-size: 200%;
     content: '';
     position: absolute;
@@ -556,8 +560,7 @@ footer button.slide-in {
     height: 3rem;
     font-size: 1rem;
     font-weight: 700;
-    flex: 1 1 100%;
-    border: 1px solid #555555; }
+    flex: 1 1 100%; }
   .cont-form .text-wrapper {
     margin-top: 1.5em;
     position: relative;
@@ -577,8 +580,7 @@ footer button.slide-in {
       font-size: 1rem;
       font-weight: 700;
       flex: 1 1 100%;
-      font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      border: 1px solid #555555; }
+      font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
   .cont-form button {
     width: 32vw;
     margin: 2em 30% 1em 30%;
@@ -711,7 +713,7 @@ footer {
 
 /*********** Video ***********/
 .hero {
-  background: rgba(12, 103, 131, 0.7) url(/video-pattern.png) repeat;
+  background: rgba(12, 103, 131, 0.7) url(./assets/video-pattern.png) repeat;
   min-height: 100vh;
   min-width: 100%;
   position: relative;
@@ -748,7 +750,7 @@ footer {
     padding: 0.5em 0;
     min-width: 220px;
     width: 20vw;
-    background-color: rgba(231, 112, 0, 0.9);
+    background-color: #0092D0;
     color: white;
     border: 2px white solid;
     border-radius: 5px;
@@ -934,7 +936,7 @@ footer {
       cursor: pointer;
       margin: 0 2em 0 0; }
       .nav-icons .nav-icon-lang svg {
-        margin-top: 1em; }
+        margin-top: 50%; }
       .nav-icons .nav-icon-lang:hover ~ .lang-toggler {
         transform: scale(1); }
   a {
@@ -1038,21 +1040,9 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: -10px -10px 0px 0px rgba(53, 53, 53, 0.3);
     transform: translateY(-10%) scale(1);
-    transition: transform ease 350ms;
-    transform-style: preserve-3d; }
-    .serv-overlay .serv::before {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      top: 10px;
-      left: -10px;
-      background-color: rgba(53, 53, 53, 0.3);
-      height: 100%;
-      width: 100%;
-      border-radius: 5px;
-      z-index: -1;
-      transform: translateZ(-1px); }
+    transition: transform ease 350ms; }
     .serv-overlay .serv .serv1 {
       width: 100%; }
     .serv-overlay .serv img {
@@ -1061,7 +1051,8 @@ footer {
       max-width: 100%;
       width: auto;
       height: auto;
-      position: relative; }
+      position: relative;
+      transform: translateY(-1px); }
     .serv-overlay .serv h2 {
       color: #424242;
       font-size: 1.6rem;
@@ -1125,15 +1116,11 @@ footer {
   .serv-header {
     min-height: 20vh; } }
 
-@media (hover: hover) {
-  .serv-overlay .serv:hover {
-    transform: translateY(-20%) scale(1.05); } }
-
 .testimonials {
   min-height: 105vh;
   height: auto;
   width: 100%;
-  background: url(/white-smartphone.png) no-repeat center;
+  background: url(./assets/white-smartphone.png) no-repeat center;
   background-size: cover;
   text-align: center;
   z-index: -1; }
