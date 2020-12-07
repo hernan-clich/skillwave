@@ -8,8 +8,8 @@
     align-items: center;
 
     &::before {
-        background: url(./assets/abstract-painting-1546249.jpg) center;
-        background-size: 200%;
+        background: url(./assets/abstract-painting-1546249.jpg) center no-repeat;
+        background-size: cover;
         content: '';
         position: absolute;
         top: 0;
@@ -17,7 +17,7 @@
         bottom: 0;
         right: 0;
         z-index: -1;
-        opacity: 0.5;
+        opacity: 0.6;
     }
 }
 

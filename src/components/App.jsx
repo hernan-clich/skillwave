@@ -20,7 +20,6 @@ function App() {
     const storedLang = localStorage.getItem("engLang");
     const [englishLang, setLang] = useState(storedLang ? 
         JSON.parse(localStorage.getItem("engLang")) : true);
-    //const changeLangFromChild = newStuff => setLang(newStuff);
     useEffect(() => {
         localStorage.setItem("engLang", JSON.stringify(englishLang));
     }, [englishLang]);
