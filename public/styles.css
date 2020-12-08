@@ -656,7 +656,7 @@ textarea.invalid + p {
     align-items: center; }
   .contact-card {
     transform: translateX(0%);
-    margin: 10em 1em 3em;
+    margin: 10em auto 3em;
     padding: 0;
     max-width: 400px;
     width: 90%;
@@ -667,6 +667,7 @@ textarea.invalid + p {
   .cont-form .text-wrapper {
     margin-left: 0em; }
   .cont-form {
+    align-self: flex-start;
     margin: 1em;
     transform: translateX(0%); }
     .cont-form::before {
