@@ -111,15 +111,16 @@ function Testimonials(props, ref) {
                         <span ref = {clientNameRef}>{clientName}</span>
                         <span>{jobTitle}</span>
                     </div>
+                    <div className = "arrow-container-prev" onClick = {prevSlideEffect}> 
+                        {prevArrow()}
+                    </div> 
+                    <div className = "arrow-container-next" onClick = {nextSlideEffect}>
+                        <svg className = "arrow next-slide" width = "24" height = "42" viewBox = "0 0 24 42" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
+                            <path d = "M3.78947 42L24 21L3.78947 0L0 3.9375L16.4211 21L0 38.0625L3.78947 42Z" fill = "#00648F" />
+                        </svg> 
+                    </div> 
                 </div>
-                <div className = "arrow-container-prev" onClick = {prevSlideEffect}> 
-                    {prevArrow()}
-                </div> 
-                <div className = "arrow-container-next" onClick = {nextSlideEffect}>
-                    <svg className = "arrow next-slide" width = "24" height = "42" viewBox = "0 0 24 42" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
-                        <path d = "M3.78947 42L24 21L3.78947 0L0 3.9375L16.4211 21L0 38.0625L3.78947 42Z" fill = "#00648F" />
-                    </svg> 
-                </div> 
+
             </div> 
         </div>
     );
