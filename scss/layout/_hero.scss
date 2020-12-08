@@ -45,14 +45,12 @@
         padding: 0.5em 0;
         min-width: 220px;
         width: 20vw;
-        //background-color: rgb(113, 49, 133,.8);
-        //background-color: rgba(231, 112, 0, 0.9);
         background-color: #0092D0;
         color: $whiteSolid;
         border: 2px $whiteSolid solid;
         border-radius: 5px;
         outline: none;
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, 1.8vw, 9rem);
         cursor: pointer;
         transition: transform 550ms ease, opacity 500ms ease, background-color 200ms ease;
 

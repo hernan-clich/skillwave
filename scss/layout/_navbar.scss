@@ -21,10 +21,13 @@
     position: fixed;
     left: 2vw;
     top: 0;
-    width: 190px;
+    min-width: 190px;
+    width: 10vw;
+
     .logo-img {
-        min-height: 81px;
-        min-width: 180px;
+        height: auto;
+        width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -42,7 +45,7 @@
 
     .nav-link {
         font-family: Helvetica, sans-serif;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 0.8vw, 5rem);
         font-weight: 600;
         letter-spacing: -0.015rem;
         text-decoration: none;

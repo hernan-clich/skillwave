@@ -81,12 +81,13 @@
     color: $blackSolid;
 
     h3 {
-        font-size: 1.6rem;
+        font-size: clamp(1.6rem, 1.6vw, 7rem);
         color: rgb(66, 66, 66);
         margin-bottom: 0;
     }
 
     p {
+        font-size: clamp(1rem, 1vw, 4rem);
         font-weight: 600;
         color: rgb(100, 100, 100);
     }

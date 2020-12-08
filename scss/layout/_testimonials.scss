@@ -9,7 +9,7 @@
 
     h2 {
         color: rgba(0, 84, 144, 1);
-        font-size: 6.5vh;
+        font-size: clamp(3rem, 3vw, 14rem);
     }
 }
 
@@ -85,7 +85,7 @@
 
     p {
         padding: 0 2.5em;
-        font-size: 1.1rem;
+        font-size: clamp(1.1rem, 1.1vw, 5rem);
         font-style: oblique;
         color: rgba(98, 98, 98, 1);
     }
@@ -108,16 +108,15 @@
         span {
             display: block;
             padding-bottom: .4em;
-            font-size: 1rem;
+            font-size: clamp(1rem, 1vw, 4.5rem);
             font-weight: 500;
-            // text-transform: uppercase;
 
             &:nth-child(2) {
                 letter-spacing: 0.05rem;
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: 900;
                 color: rgb(49, 49, 49);
-                font-size: 0.9rem;
+                font-size: clamp(0.9rem, 0.9vw, 4.25rem);;
             }
         }
     }

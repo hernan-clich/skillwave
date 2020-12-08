@@ -4,17 +4,18 @@
 }
 
 @mixin tags {
-    width: auto;
-    height: 50px;
-    padding: 0 0.5em;
+    align-items: center;
     background-color: $blackSolid;
     color: $whiteSolid;
-    font-weight: bolder;
-    text-transform: uppercase;
     display: flex;
-    align-items: center;
+    font-size: clamp(1rem, 1vw, 5rem);
+    font-weight: bolder;
+    height: 50px;
     justify-content: center;
-    position: absolute;
-    top: 7.5%;
     left: 0;
+    padding: 0 0.5em;
+    position: absolute;
+    text-transform: uppercase;
+    top: 7.5%;
+    width: auto;
 }

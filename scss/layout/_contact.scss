@@ -26,7 +26,7 @@
     padding: 1.5em;
     padding-left: 0;
     min-width: 15rem;
-    width: 21rem;
+    min-width: 21rem;
     min-height: 300px;
     height: auto;
     display: flex;
@@ -45,11 +45,12 @@
     h3 {
         margin: 1em;
         align-self: center;
+        font-size: clamp(1.2rem, 1.2vw, 5rem);
     }
 
     p,
     a {
-        font-size: 0.85rem;
+        font-size: clamp(0.85rem, 0.9vw, 4rem);
         font-weight: 400;
         text-decoration: none;
         color: $whiteSolid;
@@ -83,8 +84,6 @@
 }
 
 .cont-form {
-    // background-color: rgba(0, 255, 255, 0.37);
-
     position: relative;
     display: flex;
     justify-content: center;
@@ -140,11 +139,10 @@
     input {
         margin: 0.5em 0.75em;
         padding-left: 1em;
-        height: 3rem;
-        font-size: 1rem;
+        min-height: 3rem;
+        font-size: clamp(1rem, 1vw, 4rem);
         font-weight: 700;
         flex: 1 1 100%;
-        //border: 1px solid rgb(85, 85, 85);
     }
 
     .text-wrapper {
@@ -166,7 +164,7 @@
         textarea {
             margin: 0.5em 0.75em;
             padding: 1em 0 0 1em;
-            font-size: 1rem;
+            font-size: clamp(1rem, 1vw, 4rem);
             font-weight: 700;
             flex: 1 1 100%;
             font-family: $montserrat;
@@ -210,7 +208,7 @@
     }
 }
 
-input+p {
+input + p {
     margin: 0 1em;
     color: rgb(160, 0, 32);
     font-weight: bolder;
@@ -219,12 +217,12 @@ input+p {
     height: 0;
 }
 
-input.invalid+p {
+input.invalid + p {
     opacity: 1;
     height: auto;
 }
 
-textarea+p {
+textarea + p {
     margin: 0 1em;
     color: rgb(160, 0, 32);
     font-weight: bolder;
@@ -233,7 +231,7 @@ textarea+p {
     height: 0;
 }
 
-textarea.invalid+p {
+textarea.invalid + p {
     opacity: 1;
     height: auto;
 }
@@ -267,8 +265,6 @@ textarea.invalid+p {
         transform: translateX(0%);
         margin: 10em 1em 3em;
         padding: 0;
-        //margin-left: 0;
-        //min-width: 70%;
         max-width: 400px;
         width: 90%;
         z-index: 0;

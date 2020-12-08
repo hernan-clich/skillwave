@@ -31,18 +31,18 @@
 html {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  overflow-x: hidden; }
   body::selection {
     background-color: rgba(0, 255, 255, 0.6);
-    color: red; }
+    color: rgba(0, 255, 255, 0.8); }
 
 .none {
   display: none; }
@@ -277,10 +277,11 @@ footer button.slide-in {
   text-align: center;
   color: black; }
   .card-text h3 {
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 1.6vw, 7rem);
     color: #424242;
     margin-bottom: 0; }
   .card-text p {
+    font-size: clamp(1rem, 1vw, 4rem);
     font-weight: 600;
     color: #646464; }
 
@@ -410,35 +411,24 @@ footer button.slide-in {
   .paral-img span {
     color: rgba(255, 255, 255, 0.65);
     font-weight: 1000;
-    font-size: 10vw;
+    font-size: clamp(3.5rem, 10vw, 50rem);
     white-space: nowrap; }
 
-@media (max-width: 880px) {
-  .paral-img span {
-    font-size: 11vw; } }
-
-@media (max-width: 768px) {
-  .paral-img span {
-    font-size: 14vw; } }
-
-@media (min-width: 1400px) {
-  .paral-img span {
-    font-size: 180px; } }
-
 .tag {
-  width: auto;
-  height: 50px;
-  padding: 0 0.5em;
+  align-items: center;
   background-color: black;
   color: white;
-  font-weight: bolder;
-  text-transform: uppercase;
   display: flex;
-  align-items: center;
+  font-size: clamp(1rem, 1vw, 5rem);
+  font-weight: bolder;
+  height: 50px;
   justify-content: center;
+  left: 0;
+  padding: 0 0.5em;
   position: absolute;
+  text-transform: uppercase;
   top: 7.5%;
-  left: 0; }
+  width: auto; }
 
 @media (min-width: 1400px) {
   .tag {
@@ -477,7 +467,7 @@ footer button.slide-in {
   padding: 1.5em;
   padding-left: 0;
   min-width: 15rem;
-  width: 21rem;
+  min-width: 21rem;
   min-height: 300px;
   height: auto;
   display: flex;
@@ -492,10 +482,11 @@ footer button.slide-in {
     margin: 0 0 0 4em; }
   .contact-card h3 {
     margin: 1em;
-    align-self: center; }
+    align-self: center;
+    font-size: clamp(1.2rem, 1.2vw, 5rem); }
   .contact-card p,
   .contact-card a {
-    font-size: 0.85rem;
+    font-size: clamp(0.85rem, 0.9vw, 4rem);
     font-weight: 400;
     text-decoration: none;
     color: white; }
@@ -557,8 +548,8 @@ footer button.slide-in {
   .cont-form input {
     margin: 0.5em 0.75em;
     padding-left: 1em;
-    height: 3rem;
-    font-size: 1rem;
+    min-height: 3rem;
+    font-size: clamp(1rem, 1vw, 4rem);
     font-weight: 700;
     flex: 1 1 100%; }
   .cont-form .text-wrapper {
@@ -577,7 +568,7 @@ footer button.slide-in {
     .cont-form .text-wrapper textarea {
       margin: 0.5em 0.75em;
       padding: 1em 0 0 1em;
-      font-size: 1rem;
+      font-size: clamp(1rem, 1vw, 4rem);
       font-weight: 700;
       flex: 1 1 100%;
       font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
@@ -641,19 +632,20 @@ textarea.invalid + p {
     border: 2px solid #248b35; }
 
 .contact-tag {
-  width: auto;
-  height: 50px;
-  padding: 0 0.5em;
+  align-items: center;
   background-color: black;
   color: white;
-  font-weight: bolder;
-  text-transform: uppercase;
   display: flex;
-  align-items: center;
+  font-size: clamp(1rem, 1vw, 5rem);
+  font-weight: bolder;
+  height: 50px;
   justify-content: center;
+  left: 0;
+  padding: 0 0.5em;
   position: absolute;
+  text-transform: uppercase;
   top: 7.5%;
-  left: 0; }
+  width: auto; }
 
 @media only screen and (max-width: 940px) {
   .contact {
@@ -705,11 +697,11 @@ footer {
       color: rgba(0, 255, 255, 0.76); }
   footer p {
     margin: 1.5em 0;
-    font-size: 0.9rem; }
+    font-size: clamp(0.9rem, 0.9vw, 5rem); }
   footer span {
     color: rgba(0, 255, 255, 0.76);
     font-weight: bolder;
-    font-size: 0.9rem; }
+    font-size: clamp(0.9rem, 0.9vw, 5rem); }
 
 /*********** Video ***********/
 .hero {
@@ -755,7 +747,7 @@ footer {
     border: 2px white solid;
     border-radius: 5px;
     outline: none;
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 1.8vw, 9rem);
     cursor: pointer;
     transition: transform 550ms ease, opacity 500ms ease, background-color 200ms ease; }
     .hero button:hover {
@@ -891,10 +883,12 @@ footer {
   position: fixed;
   left: 2vw;
   top: 0;
-  width: 190px; }
+  min-width: 190px;
+  width: 10vw; }
   .logo-container .logo-img {
-    min-height: 81px;
-    min-width: 180px; }
+    height: auto;
+    width: 100%;
+    object-fit: contain; }
 
 @media only screen and (min-width: 1001px) {
   .box {
@@ -906,7 +900,7 @@ footer {
     transition: background-color 300ms; }
   .nav-link {
     font-family: Helvetica, sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 0.8vw, 5rem);
     font-weight: 600;
     letter-spacing: -0.015rem;
     text-decoration: none;
@@ -1024,7 +1018,7 @@ footer {
   align-items: center; }
   .serv-header h3 {
     color: white;
-    font-size: 2.5rem; }
+    font-size: clamp(2.5rem, 2.5vw, 12rem); }
 
 .serv-overlay {
   max-width: 100%;
@@ -1064,11 +1058,12 @@ footer {
       transform: translateY(-1px); }
     .serv-overlay .serv h2 {
       color: #424242;
-      font-size: 1.6rem;
+      font-size: clamp(1.6rem, 1.6vw, 7rem);
       text-align: center;
       padding: 0.5em 1em 0; }
     .serv-overlay .serv p {
       color: #646464;
+      font-size: clamp(1rem, 1vw, 5rem);
       margin-top: 0.15em;
       padding: 0 2em 2em; }
 
@@ -1135,7 +1130,7 @@ footer {
   z-index: -1; }
   .testimonials h2 {
     color: #005490;
-    font-size: 6.5vh; }
+    font-size: clamp(3rem, 3vw, 14rem); }
 
 .testi-layer {
   min-height: 105vh;
@@ -1185,7 +1180,7 @@ footer {
   transition: transform 1s ease; }
   .testi-text-wrapper p {
     padding: 0 2.5em;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 1.1vw, 5rem);
     font-style: oblique;
     color: #626262; }
   .testi-text-wrapper .open-quotes {
@@ -1200,14 +1195,14 @@ footer {
   .testi-text-wrapper .testi-signature span {
     display: block;
     padding-bottom: .4em;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1vw, 4.5rem);
     font-weight: 500; }
     .testi-text-wrapper .testi-signature span:nth-child(2) {
       letter-spacing: 0.05rem;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
       color: #313131;
-      font-size: 0.9rem; }
+      font-size: clamp(0.9rem, 0.9vw, 4.25rem); }
 
 @media (max-width: 1330px) {
   .testi-text-wrapper {
