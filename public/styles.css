@@ -295,6 +295,10 @@ footer button.slide-in {
     border: 0.2rem solid #00a5a5;
     background-color: white; } }
 
+@media (max-width: 300px) {
+  .card-container {
+    width: 270px; } }
+
 .lang-toggler {
   background-color: rgba(245, 245, 245, 0.85);
   display: flex;
@@ -413,6 +417,10 @@ footer button.slide-in {
     font-weight: 1000;
     font-size: clamp(3.5rem, 10vw, 50rem);
     white-space: nowrap; }
+
+@media (max-width: 320px) {
+  .paral-img span {
+    font-size: 2.5rem; } }
 
 .tag {
   align-items: center;
@@ -668,7 +676,7 @@ textarea.invalid + p {
     margin-left: 0em; }
   .cont-form {
     align-self: flex-start;
-    margin: 1em;
+    margin: 1em 0;
     transform: translateX(0%); }
     .cont-form::before {
       top: 0;
@@ -687,7 +695,8 @@ footer {
   position: sticky;
   max-height: 15vh;
   background-color: black;
-  color: white; }
+  color: white;
+  text-align: center; }
   footer a {
     display: inline;
     text-decoration: none;

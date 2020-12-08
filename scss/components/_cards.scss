@@ -113,3 +113,10 @@
         }
     }
 }
+
+// Galaxy fold
+@media(max-width: 300px) {
+    .card-container {
+        width: 270px;
+    }
+}
