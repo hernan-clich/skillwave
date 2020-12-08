@@ -97,7 +97,9 @@ function Header(props, ref) {
     return (
         <div id="nav-desktop">
             <header ref={navBar} className="navbar-main">
-                <img ref={logoImg} className="logo-img" src="./assets/logo-hor.svg" alt="logo"/>
+                <div className="logo-container">
+                    <img ref={logoImg} className="logo-img" src="./assets/logo-hor.svg" alt="logo"/>
+                </div>           
                 <div className="navbar-mobile">
                 <input 
                     type="checkbox" 

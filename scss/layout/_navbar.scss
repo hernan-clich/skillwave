@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: stretch;
     min-height: 65px;
-    height: 11vh;
+    height: 9vh;
     width: 100vw;
     padding: 0 1.8em;
     justify-content: flex-end;
@@ -14,13 +14,18 @@
     transition: background-color 1s ease;
 }
 
-.logo-img {
-    margin-right: auto;
-    width: 200px;
-    padding: 2vh 0 0 1vw;
+.logo-container {
+    align-items: center;
+    display: flex;
+    height: 9vh;
     position: fixed;
+    left: 2vw;
     top: 0;
-    left: 1rem;
+    width: 190px;
+    .logo-img {
+        min-height: 81px;
+        min-width: 180px;
+    }
 }
 
 @media only screen and (min-width: 1001px) {
