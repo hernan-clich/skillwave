@@ -675,8 +675,9 @@ textarea.invalid + p {
   .cont-form .text-wrapper {
     margin-left: 0em; }
   .cont-form {
-    align-self: flex-start;
+    align-self: center;
     margin: 1em 0;
+    max-width: 560px;
     transform: translateX(0%); }
     .cont-form::before {
       top: 0;

@@ -277,8 +277,9 @@ textarea.invalid + p {
     }
 
     .cont-form {
-        align-self: flex-start;
+        align-self: center;
         margin: 1em 0;
+        max-width: 560px;
         transform: translateX(0%);
 
         &::before {
